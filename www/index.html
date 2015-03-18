@@ -9,11 +9,11 @@
 	        
 	        <link rel="stylesheet" type="text/css" href="css/index.css" /><!--phonegap-->
 	        <link rel="stylesheet" href="js/jQueryMobile/jquery.mobile-1.4.5.min.css"><!--jquerymobile-->
+	        <link rel="stylesheet" type="text/css" href="mystyle.css"><!--my-->
 			
+			<script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
 			<script type="text/javascript" src="js/myindex.js"></script>
-			<script src="js/jQueryMobile/jquery.mobile-1.4.5.min.js"></script>
-	
-			<link rel="stylesheet" type="text/css" href="mystyle.css"><!--my-->
+			<script type="text/javascript" src="js/jQueryMobile/jquery.mobile-1.4.5.min.js"></script>
 	
 			<!--Inicializar plugin de phonegap-->
 			<script type="text/javascript" src="cordova.js"></script>
@@ -24,25 +24,22 @@
 	</head>
 	<body>
 		<!--PAGINA 1: INICIO-->
-		<div data-role="page" id="inicio">
-		
-				<div id="marco" data-role="header">
-				    <h1>GESTION DE BD</h1>
-				</div>
-		
-		   		<div id="body1" data-role="main" class="ui-content">
-		   			<div data-role="controlgroup">
-			   		    <a href="#DatosConexion" data-role="button" data-inline="true" data-theme="b" data-transition="fade"><h1>Datos de conexion</h1><!--datos de conexion--></a>
-			   			<a href="#Conectarse" data-role="button" data-inline="true" data-theme="b" data-transition="fade"id="bd"><h1>Conectarse</h1></a><!--cuando se conecta--> <!--nombre de BD-->
-						<a href="#Tablas" data-role="button" data-inline="true" data-theme="b" data-transition="fade"><h1>Tablas</h1></a>
-						<a href="#Datos" data-role="button" data-inline="true" data-theme="b" data-transition="fade"><h1>Datos</h1></a>
-					</div>	
-				</div>
-
-		
-				<div id="pie" data-role="footer">
-					<p>Autor: Iosu Recalde</p>
-				</div>
+		<div data-role="page" id="Inicio">
+			<div id="marco" data-role="header">
+			    <h1>GESTION DE BD</h1>
+			</div>
+	
+	   		<div id="body1" data-role="main" class="ui-content">
+	   			<div data-role="controlgroup" data-type="vertical">
+		   		    <a href="#DatosConexion" data-role="button" data-inline="false" data-theme="b" data-transition="fade"><b>Datos de conexion</b><!--datos de conexion--></a>
+		   			<a href="#Conectarse" data-role="button" data-inline="false" data-theme="b" data-transition="fade" id="bd"><b>Conectarse</b></a><!--cuando se conecta--> <!--nombre de BD-->
+					<a href="#Tablas" data-role="button" data-inline="false" data-theme="b" data-transition="fade"><b>Tablas</b></a>
+					<a href="#Datos" data-role="button" data-inline="false" data-theme="b" data-transition="fade"><b>Datos</b></a>
+				</div>	
+			</div>
+			<div id="pie" data-role="footer">
+				<p>Autor: Iosu Recalde</p>
+			</div>
 		</div> 
 		<!--PAGINA Datos de conexion: -->
 		<div data-role="page" id="DatosConexion">
@@ -53,6 +50,7 @@
 					<div id="Total_Amount_label"><h1>Base de datos: </h1></div>
 					<div id="BD_DatosConexion"><h1>Prueba</h1></div>
 				</div>
+				<a href="#Inicio" data-role="button" data-inline="false" data-theme="b" data-transition="fade"><b>volver</b></a>
 		</div>	
 		<!--PAGINA Conectarse a BD: -->
 		<div data-role="page" id="Conectarse">
@@ -63,6 +61,7 @@
 					<div id="Total_Amount_label"><h1>Base de datos: </h1></div>
 					<div id="BD_DatosConexion"><h1>Prueba</h1></div>
 				</div>
+				<a href="#Inicio" data-role="button" data-inline="false" data-theme="b" data-transition="fade"><b>volver</b></a>
 		</div>
 		<!--PAGINA Gestion de las tablas: -->
 		<div data-role="page" id="Tablas">
@@ -73,6 +72,7 @@
 					<div id="Total_Amount_label"><h1>Base de datos: </h1></div>
 					<div id="BD_DatosConexion"><h1>Prueba</h1></div>
 				</div>
+				<a href="#Inicio" data-role="button" data-inline="false" data-theme="b" data-transition="fade"><b>volver</b></a>
 		</div>
 		<!--PAGINA Gestion de los Datos: -->
 		<div data-role="page" id="Datos">
@@ -83,6 +83,7 @@
 					<div id="Total_Amount_label"><h1>Base de datos: </h1></div>
 					<div id="BD_DatosConexion"><h1>Prueba</h1></div>
 				</div>
+				<a href="#Inicio" data-role="button" data-inline="false" data-theme="b" data-transition="fade"><b>volver</b></a>
 		</div>
 	</body>
 </html>
