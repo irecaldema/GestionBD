@@ -1,92 +1,88 @@
 <!DOCTYPE html>
 <html>
-<head>
-
-		<meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="msapplication-tap-highlight" content="no" />
-        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        
-        <link rel="stylesheet" type="text/css" href="css/index.css" /><!--phonegap-->
-        <link rel="stylesheet" href="js/jQueryMobile/jquery.mobile-1.4.5.min.css"><!--jquerymobile-->
-		
-		<script type="text/javascript" src="js/myindex.js"></script>
-		<script src="js/jquery-1.11.2.min.js"></script>
-		<script src="js/jQueryMobile/jquery.mobile-1.4.5.min.js"></script>
-
-		<link rel="stylesheet" type="text/css" href="mystyle.css"><!--my-->
-
-		<!--Inicializar plugin de phonegap-->
-		<script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-		<script>
-				app.initialize();
-		</script>
-					
-</head>
-
-<body>
+	<head>
+			<meta charset="utf-8" />
+	        <meta name="format-detection" content="telephone=no" />
+	        <meta name="msapplication-tap-highlight" content="no" />
+	        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+	        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+	        
+	        <link rel="stylesheet" type="text/css" href="css/index.css" /><!--phonegap-->
+	        <link rel="stylesheet" href="js/jQueryMobile/jquery.mobile-1.4.5.min.css"><!--jquerymobile-->
+			
+			<script type="text/javascript" src="js/myindex.js"></script>
+			<script src="js/jQueryMobile/jquery.mobile-1.4.5.min.js"></script>
 	
+			<link rel="stylesheet" type="text/css" href="mystyle.css"><!--my-->
+	
+			<!--Inicializar plugin de phonegap-->
+			<script type="text/javascript" src="cordova.js"></script>
+	        <script type="text/javascript" src="js/index.js"></script>
+			<script>
+					app.initialize();
+			</script>
+	</head>
+	<body>
+		<!--PAGINA 1: INICIO-->
+		<div data-role="page" id="inicio">
+		
+				<div id="marco" data-role="header">
+				    <h1>GESTION DE BD</h1>
+				</div>
+		
+		   		<div id="body1" data-role="main" class="ui-content">
+		   			<div data-role="controlgroup">
+			   		    <a href="#DatosConexion" data-role="button" data-inline="true" data-theme="b" data-transition="fade"><h1>Datos de conexion</h1><!--datos de conexion--></a>
+			   			<a href="#Conectarse" data-role="button" data-inline="true" data-theme="b" data-transition="fade"id="bd"><h1>Conectarse</h1></a><!--cuando se conecta--> <!--nombre de BD-->
+						<a href="#Tablas" data-role="button" data-inline="true" data-theme="b" data-transition="fade"><h1>Tablas</h1></a>
+						<a href="#Datos" data-role="button" data-inline="true" data-theme="b" data-transition="fade"><h1>Datos</h1></a>
+					</div>	
+				</div>
 
-<!--PAGINA 1: INICIO-->
-<div data-role="page" id="inicio">
-
-		<div id="marco" data-role="header">
-		    <h1>GESTION DE BD</h1>
+		
+				<div id="pie" data-role="footer">
+					<p>Autor: Iosu Recalde</p>
+				</div>
+		</div> 
+		<!--PAGINA Datos de conexion: -->
+		<div data-role="page" id="DatosConexion">
+				<div id="marco" data-role="header">
+		    		<h1>Datos de conexion</h1>
+		  		</div>
+		   		<div id="body1" data-role="main" class="ui-content">
+					<div id="Total_Amount_label"><h1>Base de datos: </h1></div>
+					<div id="BD_DatosConexion"><h1>Prueba</h1></div>
+				</div>
+		</div>	
+		<!--PAGINA Conectarse a BD: -->
+		<div data-role="page" id="Conectarse">
+				<div id="marco" data-role="header">
+		    		<h1>SELECCION DE BD</h1>
+		  		</div>
+		   		<div id="body2" data-role="main" class="ui-content">
+					<div id="Total_Amount_label"><h1>Base de datos: </h1></div>
+					<div id="BD_DatosConexion"><h1>Prueba</h1></div>
+				</div>
 		</div>
-
-   		<div id="body2" data-role="main" class="ui-content">
-   		    <a href="#DatosConexion" data-role="button" data-inline="true" data-theme="b" data-transition="fade"><h1>Datos de conexion</h1><!--datos de conexion--></a>
-   			<a href="#Conectarse" data-role="button" data-inline="true" data-theme="b" data-transition="fade"><h1>Conectarse</h1></a><!--cuando se conecta--> <h1>BD: </h1><!--nombre de BD-->
-			<a href="#Tablas" data-role="button" data-inline="true" data-theme="b" data-transition="fade"><h1>Tablas</h1></a>
-			<a href="#Datos" data-role="button" data-inline="true" data-theme="b" data-transition="fade"><h1>Datos</h1></a>
+		<!--PAGINA Gestion de las tablas: -->
+		<div data-role="page" id="Tablas">
+				<div id="marco" data-role="header">
+		    		<h1>TABLAS</h1>
+		  		</div>
+		   		<div id="body3" data-role="main" class="ui-content">
+					<div id="Total_Amount_label"><h1>Base de datos: </h1></div>
+					<div id="BD_DatosConexion"><h1>Prueba</h1></div>
+				</div>
 		</div>
-
-		<div id="pie" data-role="footer">
-			<p>Autor: Iosu Recalde</p>
+		<!--PAGINA Gestion de los Datos: -->
+		<div data-role="page" id="Datos">
+				<div id="marco" data-role="header">
+		    		<h1>DATOS</h1>
+		  		</div>
+		   		<div id="body4" data-role="main" class="ui-content">
+					<div id="Total_Amount_label"><h1>Base de datos: </h1></div>
+					<div id="BD_DatosConexion"><h1>Prueba</h1></div>
+				</div>
 		</div>
-</div> 
-<!--PAGINA Datos de conexion: -->
-<div data-role="page" id="DatosConexion">
-		<div id="marco" data-role="header">
-    		<h1>Datos de conexion</h1>
-  		</div>
-   		<div id="body1" data-role="main" class="ui-content">
-			<div id="Total_Amount_label"><h1>Base de datos: </h1></div>
-			<div id="BD_DatosConexion"><h1>Prueba</h1></div>
-		</div>
-</div>	
-<!--PAGINA Conectarse a BD: -->
-<div data-role="page" id="Conectarse">
-		<div id="marco" data-role="header">
-    		<h1>Datos de conexion</h1>
-  		</div>
-   		<div id="body1" data-role="main" class="ui-content">
-			<div id="Total_Amount_label"><h1>Base de datos: </h1></div>
-			<div id="BD_DatosConexion"><h1>Prueba</h1></div>
-		</div>
-</div>
-<!--PAGINA Gestion de las tablas: -->
-<div data-role="page" id="Tablas">
-		<div id="marco" data-role="header">
-    		<h1>Datos de conexion</h1>
-  		</div>
-   		<div id="body1" data-role="main" class="ui-content">
-			<div id="Total_Amount_label"><h1>Base de datos: </h1></div>
-			<div id="BD_DatosConexion"><h1>Prueba</h1></div>
-		</div>
-</div>
-<!--PAGINA Gestion de los Datos: -->
-<div data-role="page" id="Datos">
-		<div id="marco" data-role="header">
-    		<h1>Datos de conexion</h1>
-  		</div>
-   		<div id="body1" data-role="main" class="ui-content">
-			<div id="Total_Amount_label"><h1>Base de datos: </h1></div>
-			<div id="BD_DatosConexion"><h1>Prueba</h1></div>
-		</div>
-</div>
-
-</body>
+	</body>
 </html>
