@@ -31,35 +31,73 @@
 	
 	   		<div id="body0" data-role="main" class="ui-content">
 	   			<div data-role="controlgroup">
-		   		    <a href="#DatosConexion" data-role="button" data-rel="dialog" data-theme="b" data-transition="pop"><b>Datos de conexion</b><!--datos de conexion--></a>
-		   			<a href="#Conectarse" data-role="button" data-rel="dialog" data-theme="b" data-transition="pop" id="bd"><b>Conectarse</b></a><!--cuando se conecta--> <!--nombre de BD-->
-					<a href="#Tablas" data-role="button" data-rel="dialog" data-theme="b" data-transition="pop"><b>Tablas</b></a>
-					<a href="#Datos" data-role="button" data-rel="dialog" data-theme="b" data-transition="pop"><b>Datos</b></a>
+		   		    <button onclick="reinicio();location.href='#DatosConexion';" data-rel="dialog" class="ui-corner-all" data-theme="b" data-transition="flip">Datos de conexion</button>
+		   			<button onclick="location.href='#SeleccionadorBD'" disabled data-rel="dialog" class="ui-corner-all" data-theme="b" data-transition="flip" id="selec_bd_b" >Seleccion de BD</button><!--cuando se conecta--> <!--nombre de BD-->
+					<button onclick="location.href='#Tablas'" disabled data-rel="dialog" class="ui-corner-all" data-theme="b" data-transition="flip" id="tablas_b" >Tablas</button>
+					<button onclick="location.href='#Datos'" disabled data-rel="dialog" class="ui-corner-all" data-theme="b" data-transition="flip" id="datos_b" >Datos</button>
 				</div>	
 			</div>
 			<div id="pie" data-role="footer">
 				<p>Autor: Iosu Recalde</p>
 			</div>
 		</div> 
-		<!--PAGINA Datos de conexion: -->
+		<!--PAGINA Datos de conexion y conexion -->
 		<div data-role="page" id="DatosConexion">
-				<div id="marco" data-role="header">
-		    		<h1>Datos de conexion</h1>
-		  		</div>
-		   		<div id="body1" data-role="main" class="ui-content">
-					<div id="Total_Amount_label"><h1>Base de datos: </h1></div>
-					<div id="BD_DatosConexion"><h1>Prueba</h1></div>
+			<div id="marco" data-role="header">
+		    	<h1>Datos de conexion</h1>
+		    </div>	
+	  		<div id="body1" data-role="main" class="ui-content">
+				<div id="BD_DatosConexion">
+					<h1>Selecciona tipo de BD</h1>
+					<a href="#BDOffline" data-role="button" data-rel="dialog" class="ui-corner-all" data-theme="a" data-transition="pop"><b>Offline/SQLite</b></a>
+					<a href="#BDOnline" data-role="button" data-rel="dialog" class="ui-corner-all" data-theme="a" data-transition="pop"><b>Online/openshift</b></a>
 				</div>
-				<a href="#Inicio" data-role="button" data-inline="false" data-rel="dialog" data-theme="b" data-transition="slidedown"><b>volver</b></a>
-		</div>	
-		<!--PAGINA Conectarse a BD: -->
-		<div data-role="page" id="Conectarse">
+			</div>
+			<a href="#Inicio" data-role="button" data-inline="false" data-rel="dialog" data-theme="b" data-transition="slidedown"><b>volver</b></a>
+		</div>
+		<!---->
+		<div data-role="page" id="BDOffline">
+			<div id="marco" data-role="header">
+		   		<h1>BD Offline</h1>
+			</div>
+			<div id="body1_1" data-role="main" class="ui-content">
+				<div id=""><h1>has seleccionado offline</h1></div>
+				<button onclick="seleccion_bd()">conectarse</button>
+			</div>
+			<a href="#Inicio" data-role="button" data-inline="false" data-rel="dialog" data-theme="b" data-transition="slidedown"><b>volver</b></a>
+		</div>
+		<!--Muestra de bases de datos y seleccion -->
+		<div data-role="page" id="BDOnline">
+			<div id="marco" data-role="header">
+		   		<h1>BD Online</h1>
+			</div>
+			<div id="body1_2" data-role="main" class="ui-content">
+				<div id="BD_DatosConexion">
+					<b>Usuario: </b>
+					</br>
+					<input type="textarea" name="usuario"/>
+					</br>
+					</br>
+					<b>Contraseña: </b>
+					<input type="password" name="contra"/>
+				</div>
+			</div>
+			<a href="#Inicio" data-role="button" data-inline="false" data-rel="dialog" data-theme="b" data-transition="slidedown"><b>volver</b></a>
+		</div>
+		<!--Muestra de bases de datos y seleccion -->
+		<div data-role="page" id="SeleccionadorBD">
 				<div id="marco" data-role="header">
 		    		<h1>SELECCION DE BD</h1>
 		  		</div>
 		   		<div id="body2" data-role="main" class="ui-content">
-					<div id="Total_Amount_label"><h1>Base de datos: </h1></div>
-					<div id="BD_DatosConexion"><h1>Prueba</h1></div>
+		   			<!--Bases de datos a elegir-->
+					<div>
+						<input type="Radio" name="colorin" value="ff0000"><li>Rojo</li>  
+						<br> 
+						<input type="Radio" name="colorin" value="00ff00"><li>Verde</li>  
+						<br> 
+						<input type="Radio" name="colorin" value="0000ff"><li>Azul</li>  
+		   			</div>
 				</div>
 				<a href="#Inicio" data-role="button" data-inline="false" data-rel="dialog" data-theme="b" data-transition="slidedown"><b>volver</b></a>
 		</div>
