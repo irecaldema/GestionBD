@@ -33,7 +33,8 @@
 	   			<div id=desconexion align="right"></div>
 	   			<div data-role="controlgroup">
 		   		    <button onclick="reinicio();location.href='#DatosConexion'" data-rel="dialog" class="ui-corner-all" data-theme="b" data-transition="flip">Datos de conexion</button>
-		   			<button disabled onclick="location.href='#SeleccionadorBD'"	data-rel="dialog" class="ui-corner-all" data-theme="b" data-transition="flip" id="selec_bd_b" >Seleccion de BD</button><!--cuando se conecta--> <!--nombre de BD-->
+		   		    <button disabled onclick="location.href='#BaseDatos'" 		data-rel="dialog" class="ui-corner-all" data-theme="b" data-transition="flip" id="basedatos_b" >Base de datos</button>
+		   			<div id="seleccionado"></div>
 					<button disabled onclick="location.href='#Tablas'" 			data-rel="dialog" class="ui-corner-all" data-theme="b" data-transition="flip" id="tablas_b" >Tablas</button>
 					<button disabled onclick="location.href='#Datos'" 			data-rel="dialog" class="ui-corner-all" data-theme="b" data-transition="flip" id="datos_b" >Datos</button>
 				</div>	
@@ -56,54 +57,90 @@
 			</div>
 			<a href="#Inicio" data-role="button" data-inline="false" data-rel="dialog" data-theme="b" data-transition="slidedown"><b>volver</b></a>
 		</div>
-		<!--Pagina de conexion offline-->
-		<div data-role="page" id="BDOffline">
-			<div id="marco" data-role="header">
-		   		<h1>BD Offline</h1>
-			</div>
-			<div id="body1_1" data-role="main" class="ui-content">
-				<div id=""><h1>has seleccionado offline</h1></div>
-				<button onclick="seleccion_bd_off(),conexion_offline()">conectarse</button>
-			</div>
-			<a href="#Inicio" data-role="button" data-inline="false" data-rel="dialog" data-theme="b" data-transition="slidedown"><b>volver</b></a>
-		</div>
-		<!--Pagina de conexion online-->
-		<div data-role="page" id="BDOnline">
-			<div id="marco" data-role="header">
-		   		<h1>BD Online</h1>
-			</div>
-			<div id="body1_2" data-role="main" class="ui-content">
-				<div id="BD_DatosConexion">
-					<b>Usuario: </b>
-					</br>
-					<input type="textarea" name="usuario"/>
-					</br>
-					</br>
-					<b>Contraseña: </b>
-					<input type="password" name="contra"/>
-					</br>
-					<button onclick="seleccion_bd_on(),conexion_online()">conectarse</button>
-				</div>
-			</div>
-			<a href="#Inicio" data-role="button" data-inline="false" data-rel="dialog" data-theme="b" data-transition="slidedown"><b>volver</b></a>
-		</div>
-		<!--Muestra de bases de datos y seleccion -->
-		<div data-role="page" id="SeleccionadorBD">
+			<!--Pagina de conexion offline-->
+			<div data-role="page" id="BDOffline">
 				<div id="marco" data-role="header">
-		    		<h1>SELECCION DE BD</h1>
+			   		<h1>BD Offline</h1>
+				</div>
+				<div id="body1_1" data-role="main" class="ui-content">
+					<div id=""><h1>Has seleccionado modo offline</h1></div>
+					<button onclick="mostrar_bds_off(),conexion_offline()">conectarse</button>
+				</div>
+				<a href="#Inicio" data-role="button" data-inline="false" data-rel="dialog" data-theme="b" data-transition="slidedown"><b>volver</b></a>
+			</div>
+			<!--Pagina de conexion online-->
+			<div data-role="page" id="BDOnline">
+				<div id="marco" data-role="header">
+			   		<h1>BD Online</h1>
+				</div>
+				<div id="body1_2" data-role="main" class="ui-content">
+					<div id="BD_DatosConexion">
+						<table>
+							<tr>
+								<td><b>Usuario: </b></td>
+							</tr>
+							<tr>
+								<td colsapan=2><input type="textarea" name="usuario"/></td>
+							</tr>
+							<tr>
+								<td><b>Contraseña: </b></td>
+							</tr>
+							<tr>
+								<td colspan=2><input type="password" name="contra"/></td>
+							</tr>
+						</table>
+						<button onclick="mostrar_bds_on(),conexion_online()">conectarse</button>
+					</div>
+				</div>
+				<a href="#Inicio" data-role="button" data-inline="false" data-rel="dialog" data-theme="b" data-transition="slidedown"><b>volver</b></a>
+			</div>
+		<!--PAGINA Gestion de las Bases de Datos: -->
+		<div data-role="page" id="BaseDatos">
+				<div id="marco" data-role="header">
+		    		<h1>DATOS</h1>
 		  		</div>
-		   		<div id="body2" data-role="main" class="ui-content">
-		   			<!--Bases de datos a elegir-->
-					<div>
-						<input type="Radio" name="colorin" value="ff0000"><li>Rojo</li>  
-						<br> 
-						<input type="Radio" name="colorin" value="00ff00"><li>Verde</li>  
-						<br> 
-						<input type="Radio" name="colorin" value="0000ff"><li>Azul</li>  
-		   			</div>
+		   		<div id="body4" data-role="main" class="ui-content">
+					<div id="Total_Amount_label"><h1>Bases de datos: </h1></div>
+					<div id="BD_DatosConexion"><h1>Prueba</h1></div>
+					<a href="#SeleccionadorBD" data-role="button" data-inline="false" data-rel="dialog" data-theme="b" data-transition="slidedown"><b>Muestra y seleccion de BD</b></a>
+					<a href="#CrearBD" data-role="button" data-inline="false" data-rel="dialog" data-theme="b" data-transition="slidedown"><b>Crear BD</b></a>
 				</div>
 				<a href="#Inicio" data-role="button" data-inline="false" data-rel="dialog" data-theme="b" data-transition="slidedown"><b>volver</b></a>
 		</div>
+			<!--Muestra de bases de datos y seleccion -->
+			<div data-role="page" id="SeleccionadorBD">
+					<div id="marco" data-role="header">
+			    		<h1>SELECCION DE BD</h1>
+			  		</div>
+			   		<div id="body2" data-role="main" class="ui-content">
+			   			<!--Bases de datos a elegir-->
+						<div id="lista_bds">
+							<input type="Radio" name="colorin" value="ff0000"><li>Rojo</li>  
+							<input type="Radio" name="colorin" value="00ff00"><li>Verde</li>  
+							<input type="Radio" name="colorin" value="0000ff"><li>Azul</li> 
+							<button onclick="seleccion_bd_on(),conexion_online()">seleccionar</button>
+						</div>
+					</div>
+					<a href="#Inicio" data-role="button" data-inline="false" data-rel="dialog" data-theme="b" data-transition="slidedown"><b>volver</b></a>
+			</div>
+			<!--Formulario para crear bases de datos -->
+			<div data-role="page" id="CrearBD">
+					<div id="marco" data-role="header">
+			    		<h1>Crear BD</h1>
+			  		</div>
+			   		<div id="body2" data-role="main" class="ui-content">
+						<table>
+							<tr>
+								<td><b>Nombre de la base de datos: </b></td>
+							</tr>
+							<tr>
+								<td colsapan=2><input type="textarea" name="nombre_bd" id="nombre_bd"/><td><button onclick="nombre_bd.value=''">vaciar</button></td>
+							</tr>
+						</table>
+						<button onclick="crear_bd(nombre_bd.value)">crear</button>
+					</div>
+					<a href="#Inicio" data-role="button" data-inline="false" data-rel="dialog" data-theme="b" data-transition="slidedown"><b>volver</b></a>
+			</div>
 		<!--PAGINA Gestion de las tablas: -->
 		<div data-role="page" id="Tablas">
 				<div id="marco" data-role="header">
