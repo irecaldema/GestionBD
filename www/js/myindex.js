@@ -22,4 +22,13 @@ function reinicio(){
 	boton2.disabled = true;
 	var boton3 = document.getElementById('datos_b');
 	boton3.disabled = true;
+	document.getElementById('desconexion').innerHTML="</br>";
+}
+
+function conexion_offline(){
+	document.getElementById('desconexion').innerHTML="<button onclick='reinicio()' id='reinicio_b'>Desconexion</button>";
+}
+
+function conexion_online(){
+	document.getElementById('desconexion').innerHTML="<button onclick='reinicio()' id='reinicio_b'>Desconexion</button>";
 }
