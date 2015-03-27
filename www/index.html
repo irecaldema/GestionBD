@@ -33,9 +33,9 @@
 	   			<div id=desconexion align="right"></div>
 	   			<div data-role="controlgroup">
 		   		    <button onclick="reinicio();location.href='#DatosConexion'" data-rel="dialog" class="ui-corner-all" data-theme="b" data-transition="flip">Datos de conexion</button>
-		   			<button disabled onclick="location.href='#SeleccionadorBD'"	 data-rel="dialog" class="ui-corner-all" data-theme="b" data-transition="flip" id="selec_bd_b" >Seleccion de BD</button><!--cuando se conecta--> <!--nombre de BD-->
-					<button disabled onclick="location.href='#Tablas'" 			 data-rel="dialog" class="ui-corner-all" data-theme="b" data-transition="flip" id="tablas_b" >Tablas</button>
-					<button disabled onclick="location.href='#Datos'" 			 data-rel="dialog" class="ui-corner-all" data-theme="b" data-transition="flip" id="datos_b" >Datos</button>
+		   			<button disabled onclick="location.href='#SeleccionadorBD'"	data-rel="dialog" class="ui-corner-all" data-theme="b" data-transition="flip" id="selec_bd_b" >Seleccion de BD</button><!--cuando se conecta--> <!--nombre de BD-->
+					<button disabled onclick="location.href='#Tablas'" 			data-rel="dialog" class="ui-corner-all" data-theme="b" data-transition="flip" id="tablas_b" >Tablas</button>
+					<button disabled onclick="location.href='#Datos'" 			data-rel="dialog" class="ui-corner-all" data-theme="b" data-transition="flip" id="datos_b" >Datos</button>
 				</div>	
 			</div>
 			<div id="pie" data-role="footer">
@@ -56,18 +56,18 @@
 			</div>
 			<a href="#Inicio" data-role="button" data-inline="false" data-rel="dialog" data-theme="b" data-transition="slidedown"><b>volver</b></a>
 		</div>
-		<!---->
+		<!--Pagina de conexion offline-->
 		<div data-role="page" id="BDOffline">
 			<div id="marco" data-role="header">
 		   		<h1>BD Offline</h1>
 			</div>
 			<div id="body1_1" data-role="main" class="ui-content">
 				<div id=""><h1>has seleccionado offline</h1></div>
-				<button onclick="seleccion_bd(),conexion_offline()">conectarse</button>
+				<button onclick="seleccion_bd_off(),conexion_offline()">conectarse</button>
 			</div>
 			<a href="#Inicio" data-role="button" data-inline="false" data-rel="dialog" data-theme="b" data-transition="slidedown"><b>volver</b></a>
 		</div>
-		<!--Muestra de bases de datos y seleccion -->
+		<!--Pagina de conexion online-->
 		<div data-role="page" id="BDOnline">
 			<div id="marco" data-role="header">
 		   		<h1>BD Online</h1>
@@ -81,6 +81,8 @@
 					</br>
 					<b>Contraseña: </b>
 					<input type="password" name="contra"/>
+					</br>
+					<button onclick="seleccion_bd_on(),conexion_online()">conectarse</button>
 				</div>
 			</div>
 			<a href="#Inicio" data-role="button" data-inline="false" data-rel="dialog" data-theme="b" data-transition="slidedown"><b>volver</b></a>

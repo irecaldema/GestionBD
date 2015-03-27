@@ -1,5 +1,4 @@
-function seleccion_bd(){
-	alert("conexion realizada")
+function seleccion_bd_off(){
 	/*var lista_bd = document.getElementById('seleccion_bd');
 	var db;
 	db = new PGSQLitePlugin("test_native.sqlite3");
@@ -11,8 +10,25 @@ function seleccion_bd(){
 	}*/
 	
 	var boton = document.getElementById('selec_bd_b');
+	boton.disabled = false; //otra manera --> boton.removeAttr("disabled");
+	alert("conexion realizada")
+}
+
+function seleccion_bd_on(){
+	/*var lista_bd = document.getElementById('seleccion_bd');
+	var basesdatos=show databases;
+	basesdatos=db.executeSql('.databases');
+	lista_bd.innerHTML=
+	<ul>
+		for(var i=0; basesdatos.size()<i; i++){
+			//por cada base de datos se añade un li a la ul
+			<li></li>
+		}
+	</ul>
+	*/
+	var boton = document.getElementById('selec_bd_b');
 	boton.disabled = false;
-	//boton.removeAttr("disabled");
+	alert("conexion realizada")
 }
 
 function reinicio(){
