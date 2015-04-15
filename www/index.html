@@ -13,6 +13,7 @@
 			
 			<script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
 			<script type="text/javascript" src="js/myindex.js"></script>
+			<script type="text/javascript" src="js/conexiones.js"></script>
 			<script type="text/javascript" src="js/jQueryMobile/jquery.mobile-1.4.5.min.js"></script>
 	
 			<!--Inicializar plugin de phonegap-->
@@ -52,7 +53,7 @@
 				<div id="BD_DatosConexion">
 					<h1>Selecciona tipo de BD</h1>
 					<a href="#BDOffline" data-role="button" data-rel="dialog" class="ui-corner-all" data-theme="a" data-transition="pop"><b>Offline/SQLite</b></a>
-					<a href="#BDOnline" data-role="button" data-rel="dialog" class="ui-corner-all" data-theme="a" data-transition="pop"><b>Online/openshift</b></a>
+					<a href="#BDOnline" data-role="button" data-rel="dialog" class="ui-corner-all" data-theme="a" data-transition="pop"><b>Online/cloud9</b></a>
 				</div>
 			</div>
 			<a href="#Inicio" data-role="button" data-inline="false" data-rel="dialog" data-theme="b" data-transition="slidedown"><b>volver</b></a>
@@ -75,21 +76,25 @@
 				</div>
 				<div id="body1_2" data-role="main" class="ui-content">
 					<div id="BD_DatosConexion">
-						<table>
+						<form id="login" method='post' >
+							<center><table border=0>
 							<tr>
-								<td><b>Usuario: </b></td>
+								<td>Usuario: </td>
+								<td><input name='usuario' type="text" size=25 /></td>
 							</tr>
 							<tr>
-								<td colsapan=2><input type="textarea" name="usuario"/></td>
+								<td>Clave: </td>
+								<td><input name='pass' type="password" size=30 /></td>
 							</tr>
 							<tr>
-								<td><b>Contraseña: </b></td>
+								<td></td>
+								<!--<td><input id='login' name='entrar' onclick="mostrar_bds_on(),conexion_online()" type="submit" value="entrar"></td>-->
+								<td><input name='login' type="submit" value="entrar"></td>
+								<!--<td><input name='registrar' type="submit" VALUE="registrarse"></td>-->
 							</tr>
-							<tr>
-								<td colspan=2><input type="password" name="contra"/></td>
-							</tr>
-						</table>
-						<button onclick="mostrar_bds_on(),conexion_online()">conectarse</button>
+							</table></center>
+						</form>	
+						<!--<button onclick="mostrar_bds_on(),conexion_online()">conectarse</button>-->
 					</div>
 				</div>
 				<a href="#Inicio" data-role="button" data-inline="false" data-rel="dialog" data-theme="b" data-transition="slidedown"><b>volver</b></a>
@@ -97,7 +102,7 @@
 		<!--PAGINA Gestion de las Bases de Datos: -->
 		<div data-role="page" id="BaseDatos">
 				<div id="marco" data-role="header">
-		    		<h1>DATOS</h1>
+		    		<h1>BASES DE DATOS</h1>
 		  		</div>
 		   		<div id="body4" data-role="main" class="ui-content">
 					<div id="Total_Amount_label"><h1>Bases de datos: </h1></div>
@@ -129,15 +134,17 @@
 			    		<h1>Crear BD</h1>
 			  		</div>
 			   		<div id="body2" data-role="main" class="ui-content">
-						<table>
-							<tr>
-								<td><b>Nombre de la base de datos: </b></td>
-							</tr>
-							<tr>
-								<td colsapan=2><input type="textarea" name="nombre_bd" id="nombre_bd"/><td><button onclick="nombre_bd.value=''">vaciar</button></td>
-							</tr>
-						</table>
-						<button onclick="crear_bd(nombre_bd.value)">crear</button>
+						<form id="crearBD" method='post' >
+							<center><table border=0>
+								<tr>
+									<td>Nombre de la base de datos: </td>
+									<td><input name='usuario' type="text" size=25 /></td>
+								</tr>
+								<tr>
+								<td><input name='login' type="submit" value="crear base de datos"></td>
+								</tr>
+							</table></center>
+						</form>	
 					</div>
 					<a href="#Inicio" data-role="button" data-inline="false" data-rel="dialog" data-theme="b" data-transition="slidedown"><b>volver</b></a>
 			</div>
