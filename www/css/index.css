@@ -113,3 +113,15 @@ h1 {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
 }
+
+.inlineLeft2, .inlineRight2 {
+    display:inline-block;
+}
+
+.inlineLeft2 {
+    float:left; 
+}
+
+.inlineRight2 {
+    float:right;
+}

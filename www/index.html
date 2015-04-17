@@ -27,11 +27,18 @@
 		<!--PAGINA 1: INICIO-->
 		<div data-role="page" id="Inicio">
 			<div align="center" id="marco" data-role="header">
-			    <div align="left" id="xervidor">Servidor:</div>GESTION DE BD<div align="right" id="uxuario">usuario:</div>
+				<h1>GESTION DE BD</h1>
 			</div>
-	
 	   		<div id="body0" data-role="main" class="ui-content">
-	   			<div id=desconexion align="right"></div>
+
+	   			<div class="inlineLeft2"><label>Servidor: </label></div>
+	   			<div class="inlineLeft2"><label id="xervidor">...</label></div>
+	   			
+	   			<div class="inlineRight2"><label id="uxuario">...</label></div>
+	   			<div class="inlineRight2"><label>Usuario:</label></div>
+	   			
+	   			<br/>
+	   			<div id="desconexion" align="right"></div>
 	   			<div data-role="controlgroup">
 		   		    <button onclick="reinicio();location.href='#DatosConexion'" data-rel="dialog" class="ui-corner-all" data-theme="b" data-transition="flip">Datos de conexion</button>
 		   		    <button disabled onclick="location.href='#BaseDatos'" 		data-rel="dialog" class="ui-corner-all" data-theme="b" data-transition="flip" id="basedatos_b" >Base de datos</button>
@@ -65,7 +72,7 @@
 				</div>
 				<div id="body1_1" data-role="main" class="ui-content">
 					<div id=""><h1>Has seleccionado modo offline</h1></div>
-					<button onclick="mostrar_bds_off(),conexion_offline()">conectarse</button>
+					<button onclick="conexion_offline()">conectarse</button>
 				</div>
 				<a href="#Inicio" data-role="button" data-inline="false" data-rel="dialog" data-theme="b" data-transition="slidedown"><b>volver</b></a>
 			</div>
@@ -79,7 +86,7 @@
 						<center><table border=0>
 						<tr>
 							<td>Usuario: </td>
-							<td><input id="usuario"name='usuario' type="text" size=25 value="nombre de usuario"></td>
+							<td><input id="usuario"name='usuario' type="text" size=25 value="usuario"></td>
 						</tr>
 						<tr>
 							<td>Clave: </td>
@@ -90,8 +97,9 @@
 						</tr>
 						</table></center>
 					</form>	
+					<div id="rexultado1" hidden >prueba</div>
 				</div>
-				<a href="#Inicio" data-role="button" data-inline="false" data-rel="dialog" data-theme="b" data-transition="slidedown"><b>volver</b></a>
+				<a href="#Inicio" onclick="conexion_online()" data-role="button" data-inline="false" data-rel="dialog" data-theme="b" data-transition="slidedown"><b>volver</b></a>
 			</div>
 		<!--PAGINA Gestion de las Bases de Datos: -->
 		<div data-role="page" id="BaseDatos">
@@ -101,7 +109,7 @@
 		   		<div id="body4" data-role="main" class="ui-content">
 					<div id="Total_Amount_label"><h1>Bases de datos: </h1></div>
 					<div id="BD_DatosConexion"><h1>Prueba</h1></div>
-					<a href="#SeleccionadorBD" data-role="button" data-inline="false" data-rel="dialog" data-theme="b" data-transition="slidedown"><b>Muestra y seleccion de BD</b></a>
+					<a href="#SeleccionadorBD" onclick="mostrar_bds_on()" data-role="button" data-inline="false" data-rel="dialog" data-theme="b" data-transition="slidedown"><b>Muestra y seleccion de BD</b></a>
 					<a href="#CrearBD" data-role="button" data-inline="false" data-rel="dialog" data-theme="b" data-transition="slidedown"><b>Crear BD</b></a>
 				</div>
 				<a href="#Inicio" data-role="button" data-inline="false" data-rel="dialog" data-theme="b" data-transition="slidedown"><b>volver</b></a>
@@ -113,34 +121,35 @@
 			  		</div>
 			   		<div id="body2" data-role="main" class="ui-content">
 			   			<!--Bases de datos a elegir-->
-						<div id="lista_bds">
+			   			<form id="form_seleccion_bd_on" method='post' enctype='application/json' >
+							<div id="lista_bds"></div>
 							<input type="Radio" name="colorin" value="ff0000"><li>Rojo</li>  
 							<input type="Radio" name="colorin" value="00ff00"><li>Verde</li>  
 							<input type="Radio" name="colorin" value="0000ff"><li>Azul</li> 
-							<button onclick="seleccion_bd_on(),conexion_online()">seleccionar</button>
-						</div>
+							<input type="submit" name="seleccionar_bd" onclick="seleccion_bd_on()" value"seleccionar">
+						</form>	
 					</div>
 					<a href="#Inicio" data-role="button" data-inline="false" data-rel="dialog" data-theme="b" data-transition="slidedown"><b>volver</b></a>
 			</div>
 			<!--Formulario para crear bases de datos -->
 			<div data-role="page" id="CrearBD">
-					<div id="marco" data-role="header">
-			    		<h1>Crear BD</h1>
-			  		</div>
-			   		<div id="body2" data-role="main" class="ui-content">
-						<form id="crearBD" method='post' >
-							<center><table border=0>
-								<tr>
-									<td>Nombre de la base de datos: </td>
-									<td><input name='usuario' type="text" size=25 /></td>
-								</tr>
-								<tr>
-								<td><input name='login' type="submit" value="crear base de datos"></td>
-								</tr>
-							</table></center>
-						</form>	
-					</div>
-					<a href="#Inicio" data-role="button" data-inline="false" data-rel="dialog" data-theme="b" data-transition="slidedown"><b>volver</b></a>
+				<div id="marco" data-role="header">
+			    	<h1>Crear BD</h1>
+			  	</div>
+			   	<div id="body2" data-role="main" class="ui-content">
+					<form id="form_crearBD" method='post' enctype='application/json' >
+						<center><table border=0>
+						<tr>
+							<td>nombre de la base de datos: </td>
+							<td><input id="n_bd" name='n_bd' type="text" size=25 value="nombre"></td>
+						</tr>
+						<tr>
+							<td colspan=2><input name='crearBD' type="submit" value="crear"></td>
+						</tr>
+						</table></center>
+					</form>	
+				</div>
+				<a href="#Inicio" data-role="button" data-inline="false" data-rel="dialog" data-theme="b" data-transition="slidedown"><b>volver</b></a>
 			</div>
 		<!--PAGINA Gestion de las tablas: -->
 		<div data-role="page" id="Tablas">
