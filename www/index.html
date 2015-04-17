@@ -26,8 +26,8 @@
 	<body>
 		<!--PAGINA 1: INICIO-->
 		<div data-role="page" id="Inicio">
-			<div id="marco" data-role="header">
-			    <h1>GESTION DE BD</h1>
+			<div align="center" id="marco" data-role="header">
+			    <div align="left" id="xervidor">Servidor:</div>GESTION DE BD<div align="right" id="uxuario">usuario:</div>
 			</div>
 	
 	   		<div id="body0" data-role="main" class="ui-content">
@@ -75,27 +75,21 @@
 			   		<h1>BD Online</h1>
 				</div>
 				<div id="body1_2" data-role="main" class="ui-content">
-					<div id="BD_DatosConexion">
-						<form id="login" method='post' >
-							<center><table border=0>
-							<tr>
-								<td>Usuario: </td>
-								<td><input name='usuario' type="text" size=25 /></td>
-							</tr>
-							<tr>
-								<td>Clave: </td>
-								<td><input name='pass' type="password" size=30 /></td>
-							</tr>
-							<tr>
-								<td></td>
-								<!--<td><input id='login' name='entrar' onclick="mostrar_bds_on(),conexion_online()" type="submit" value="entrar"></td>-->
-								<td><input name='login' type="submit" value="entrar"></td>
-								<!--<td><input name='registrar' type="submit" VALUE="registrarse"></td>-->
-							</tr>
-							</table></center>
-						</form>	
-						<!--<button onclick="mostrar_bds_on(),conexion_online()">conectarse</button>-->
-					</div>
+					<form id="login" method='post' enctype='application/json' >
+						<center><table border=0>
+						<tr>
+							<td>Usuario: </td>
+							<td><input id="usuario"name='usuario' type="text" size=25 value="nombre de usuario"></td>
+						</tr>
+						<tr>
+							<td>Clave: </td>
+							<td><input id="pass" name='pass' type="password" size=30 value=""></td>
+						</tr>
+						<tr>
+							<td/><td><input name='login' type="submit" value="entrar"></td>
+						</tr>
+						</table></center>
+					</form>	
 				</div>
 				<a href="#Inicio" data-role="button" data-inline="false" data-rel="dialog" data-theme="b" data-transition="slidedown"><b>volver</b></a>
 			</div>
