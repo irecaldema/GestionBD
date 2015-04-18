@@ -110,10 +110,7 @@
 		    		<h1>BASES DE DATOS</h1>
 		  		</div>
 		   		<div id="body4" data-role="main" class="ui-content">
-					<div class="inlinesolo">Bases de datos: </div>
 					<br/>
-															<!-- error con la funcion conexiones online en myindex no pone la funcion en onclick -->
-															<!-- la conexion de mostrar da error la de crear da buen resultado -->
 					<a href="#SeleccionadorBD" id="enlace_selec_bd" onclick="" data-role="button" data-inline="false" data-rel="dialog" data-theme="b" data-transition="slidedown"><b>Muestra y seleccion de BD</b></a>
 					<a href="#CrearBD" data-role="button" data-inline="false" data-rel="dialog" data-theme="b" data-transition="slidedown"><b>Crear BD</b></a>
 				</div>
@@ -127,10 +124,8 @@
 			   		<div id="body2" data-role="main" class="ui-content">
 			   			<!--Bases de datos a elegir-->
 			   			<form id="form_seleccion_bd_on" method='post' enctype='application/json' >
+			   				<!--error en la generacion de los botones del formulario -->
 							<div id="lista_bds"></div>
-							<input type="Radio" name="colorin" value="ff0000"><li>Rojo</li>  
-							<input type="Radio" name="colorin" value="00ff00"><li>Verde</li>  
-							<input type="Radio" name="colorin" value="0000ff"><li>Azul</li> 
 							<input type="submit" onclick="seleccion_bd_on()" value="seleccionar">
 						</form>	
 					</div>

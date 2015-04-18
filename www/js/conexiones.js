@@ -111,8 +111,23 @@ $(document).ready(function(){
 
             success: function(data){
                 console.log(data);
-                alert(data.resultado+": "+data.respuesta);
-                $("#lista_bds").html(data.respuesta);
+                var bds_zzz = data.respuesta;
+                var lista_zzz = document.getElementById('lista_bds').innerHTML;
+                for (var i=0;i<bds_zzz.length;i++) {
+                     //añadir li a ul
+                     if (i==0){
+                         //Uncaught ReferenceError: bss_zzz is not defined
+                         //lista_zzz bds_zzz[0] <input type='Radio' name='bd_seleccionada' value=information_schema>information_schema
+                         //concatenacion
+                         //lista_zzz bds_zzz[1] <input type='Radio' name='bd_seleccionada' value=information_schema>information_schema<input type='Radio' name='bd_seleccionada' value=information_schema>information_schema
+                        lista_zzz ="<input type='Radio' name='bd_seleccionada' value=\'"+bds_zzz[i]+"\'>"+bds_zzz[i]; 
+                        lista_zzz+="<br/>";
+                     }else{
+                        lista_zzz +="<input type='Radio' name='bd_seleccionada' value=\'"+bds_zzz[i]+"\'>"+bds_zzz[i];
+                        lista_zzz+="<br/>";
+                     }
+                }
+                $("#lista_bds").html(lista_zzz);
             },
             error: function(XMLHttpRequest, textStatus, errorThrown) {
                 alert("Status: " + textStatus); alert("Error: " + errorThrown);

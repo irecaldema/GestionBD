@@ -38,20 +38,10 @@ function crear_bd(nombre_bd){
 }
 
 function seleccion_bd_on(){
-	/*var lista_bd = document.getElementById('seleccion_bd');
-	var basesdatos=show databases;
-	basesdatos=db.executeSql('.databases');
-	lista_bd.innerHTML=
-	<ul>
-		for(var i=0; basesdatos.size()<i; i++){
-			//por cada base de datos se añade un li a la ul
-			<li></li>
-		}
-	</ul>
-	*/
 	document.getElementById('tablas_b').disabled = false;
 	document.getElementById('datos_b').disabled = false;
-	document.getElementById('seleccionado').innerHTML="<button disabled data-rel=\"dialog\" class=\"ui-corner-all\" data-theme=\"b\" data-transition=\"flip\" id=\"selec_bd_b\" >Base de Datos seleccionada: </button><!--cuando se selecciona nombre de BD-->";
+																										//radio del formulario de la lista de bds
+	document.getElementById('seleccionado').innerHTML="Base de Datos seleccionada: <b id=bd_seleccionada2>"+$_POST["bd_seleccionada"]+"</b>";
 	alert("base de datos seleccionada");
 }
 
