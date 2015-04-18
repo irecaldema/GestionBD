@@ -28,14 +28,17 @@
 		<div data-role="page" id="Inicio">
 			<div align="center" id="marco" data-role="header">
 				<h1>GESTION DE BD</h1>
-			</div>
-	   		<div id="body0" data-role="main" class="ui-content">
-
-	   			<div class="inlineLeft2"><label>Servidor: </label></div>
+				<br/>
+				<div class="inlineLeft2"><label>Servidor: </label></div>
 	   			<div class="inlineLeft2"><label id="xervidor">...</label></div>
 	   			
 	   			<div class="inlineRight2"><label id="uxuario">...</label></div>
 	   			<div class="inlineRight2"><label>Usuario:</label></div>
+	   			<br/>
+			</div>
+	   		<div id="body0" data-role="main" class="ui-content">
+
+
 	   			
 	   			<br/>
 	   			<div id="desconexion" align="right"></div>
@@ -47,6 +50,7 @@
 					<button disabled onclick="location.href='#Datos'" 			data-rel="dialog" class="ui-corner-all" data-theme="b" data-transition="flip" id="datos_b" >Datos</button>
 				</div>	
 			</div>
+			<div id="rexultado1" hidden ></div>
 			<div id="pie" data-role="footer">
 				<p>Autor: Iosu Recalde</p>
 			</div>
@@ -97,7 +101,6 @@
 						</tr>
 						</table></center>
 					</form>	
-					<div id="rexultado1" hidden >prueba</div>
 				</div>
 				<a href="#Inicio" onclick="conexion_online()" data-role="button" data-inline="false" data-rel="dialog" data-theme="b" data-transition="slidedown"><b>volver</b></a>
 			</div>
@@ -107,9 +110,11 @@
 		    		<h1>BASES DE DATOS</h1>
 		  		</div>
 		   		<div id="body4" data-role="main" class="ui-content">
-					<div id="Total_Amount_label"><h1>Bases de datos: </h1></div>
-					<div id="BD_DatosConexion"><h1>Prueba</h1></div>
-					<a href="#SeleccionadorBD" onclick="mostrar_bds_on()" data-role="button" data-inline="false" data-rel="dialog" data-theme="b" data-transition="slidedown"><b>Muestra y seleccion de BD</b></a>
+					<div class="inlinesolo">Bases de datos: </div>
+					<br/>
+															<!-- error con la funcion conexiones online en myindex no pone la funcion en onclick -->
+															<!-- la conexion de mostrar da error la de crear da buen resultado -->
+					<a href="#SeleccionadorBD" id="enlace_selec_bd" onclick="" data-role="button" data-inline="false" data-rel="dialog" data-theme="b" data-transition="slidedown"><b>Muestra y seleccion de BD</b></a>
 					<a href="#CrearBD" data-role="button" data-inline="false" data-rel="dialog" data-theme="b" data-transition="slidedown"><b>Crear BD</b></a>
 				</div>
 				<a href="#Inicio" data-role="button" data-inline="false" data-rel="dialog" data-theme="b" data-transition="slidedown"><b>volver</b></a>
@@ -126,7 +131,7 @@
 							<input type="Radio" name="colorin" value="ff0000"><li>Rojo</li>  
 							<input type="Radio" name="colorin" value="00ff00"><li>Verde</li>  
 							<input type="Radio" name="colorin" value="0000ff"><li>Azul</li> 
-							<input type="submit" name="seleccionar_bd" onclick="seleccion_bd_on()" value"seleccionar">
+							<input type="submit" onclick="seleccion_bd_on()" value="seleccionar">
 						</form>	
 					</div>
 					<a href="#Inicio" data-role="button" data-inline="false" data-rel="dialog" data-theme="b" data-transition="slidedown"><b>volver</b></a>
@@ -157,8 +162,7 @@
 		    		<h1>TABLAS</h1>
 		  		</div>
 		   		<div id="body3" data-role="main" class="ui-content">
-					<div id="Total_Amount_label"><h1>Base de datos: </h1></div>
-					<div id="BD_DatosConexion"><h1>Prueba</h1></div>
+					<br/>
 				</div>
 				<a href="#Inicio" data-role="button" data-inline="false" data-rel="dialog" data-theme="b" data-transition="slidedown"><b>volver</b></a>
 		</div>
@@ -168,8 +172,7 @@
 		    		<h1>DATOS</h1>
 		  		</div>
 		   		<div id="body4" data-role="main" class="ui-content">
-					<div id="Total_Amount_label"><h1>Base de datos: </h1></div>
-					<div id="BD_DatosConexion"><h1>Prueba</h1></div>
+					<br/>
 				</div>
 				<a href="#Inicio" data-role="button" data-inline="false" data-rel="dialog" data-theme="b" data-transition="slidedown"><b>volver</b></a>
 		</div>

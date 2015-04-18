@@ -34,7 +34,7 @@ $(document).ready(function(){
                 //console.log(data);
                 $( "#uxuario" ).html(data.usuario);
                 $( "#xervidor" ).html(data.servidor);
-                $( "#rexultado1" ).html("ok");
+                $( "#rexultado1" ).html("online");
                 alert("conexion exitosa: "+data.usuario);
                 //location.href = "index.html";
               
@@ -62,6 +62,8 @@ $(document).ready(function(){
         var formData = $(this).serializeArray();
         formData.push(usuario);
         formData.push(contrasena);
+        var gestion = {name:"gestion_bd",value:"crear"};
+        formData.push(gestion)
         $.ajax({
             //type: "GET",
             type: "POST",

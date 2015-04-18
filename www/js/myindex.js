@@ -1,11 +1,3 @@
-document.write('<script src="conexiones.js" type="text/javascript"></script>');
-function mostrar_bds(){
-	if(document.getElementById('xervidor').innerHTML=="offline"){
-		mostrar_bds_off();
-	}else if(document.getElementById('xervidor').innerHTML=="online"){
-		mostrar_bds_on();
-	}
-}
 
 function mostrar_bds_off(){
 	/*var lista_bd = document.getElementById('seleccion_bd');
@@ -79,14 +71,21 @@ function reinicio(){
 
 function conexion_offline(){
 	document.getElementById('desconexion').innerHTML="<button onclick='reinicio()' id='reinicio_b'>Desconexion</button>";
-	document.getElementById('xervidor').innerHTML="offline";
-	document.getElementById('uxuario').innerHTML="local";
+	
+	document.getElementById('xervidor').innerHTML="<b>offline</b>";
+	document.getElementById('uxuario').innerHTML="<b>local</b>";
+	
+	document.getElementById("enlace_selec_bd").onclick = function() {mostrar_bds_off()};
 }
 
 function conexion_online(){
-	if (document.getElementById('rexultado1').innerHTML=="ok"){
+	if (document.getElementById('rexultado1').innerHTML=="online"){
+		
+		document.getElementById("enlace_selec_bd").onclick = function() {mostrar_bds_on()};
+		
 		document.getElementById('desconexion').innerHTML="<button onclick='reinicio()' id='reinicio_b'>Desconexion</button>";
 		var boton = document.getElementById('basedatos_b');
 		boton.disabled = false;
+
 	}
 }

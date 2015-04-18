@@ -125,3 +125,7 @@ h1 {
 .inlineRight2 {
     float:right;
 }
+
+.inlinesolo {
+    display:inline-block;
+}
