@@ -6,11 +6,13 @@ var usuario="";
 var contrasena="";
 
 $(document).ready(function(){
+    
+
 
     $( "#login" ).submit(function( event ) {
         
         $( "#rexultado1" ).html("...");
-        console.log("submit");
+        console.log("login submit");
         /* Stop form from submitting normally */
         event.preventDefault();
         /* Clear result div*/
@@ -48,9 +50,9 @@ $(document).ready(function(){
     });
     
     $( "#form_crearBD" ).submit(function( event ) {
-        alert("crear bd submit ...");
+        //alert("crear bd submit ...");
 
-        console.log("submit");
+        console.log("crear bd submit");
         //Stop form from submitting normally 
         event.preventDefault();
         // Clear result div
@@ -85,7 +87,10 @@ $(document).ready(function(){
 
     });
 
+});   
+
     function mostrar_bds_on(){
+        console.log("mostrar submit");
         //alert("funcion mostrar bd ...");
         // Clear result div
         $("#lista_bds").html('...');
@@ -124,5 +129,3 @@ $(document).ready(function(){
             }
         });
     }
-    
-});    

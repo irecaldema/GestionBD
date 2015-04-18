@@ -67,13 +67,19 @@ function conexion_offline(){
 	document.getElementById('xervidor').innerHTML="<b>offline</b>";
 	document.getElementById('uxuario').innerHTML="<b>local</b>";
 	
+	var boton = document.getElementById('basedatos_b');
+	boton.disabled = false;
+	
 	document.getElementById("enlace_selec_bd").onclick = function() {mostrar_bds_off()};
 }
 
 function conexion_online(){
 	if (document.getElementById('rexultado1').innerHTML=="online"){
 		
-		document.getElementById("enlace_selec_bd").onclick = function() {mostrar_bds_on()};
+		document.getElementById("enlace_selec_bd").onclick = function(){mostrar_bds_on()};
+		//var boton_onclick = document.getElementById("enlace_selec_bd"); 		modo 2 de hacer lo mismo
+		//boton_onclick.setAttribute("onClick",function(){mostrar_bds_on()});
+		console.log("onclick xD");
 		
 		document.getElementById('desconexion').innerHTML="<button onclick='reinicio()' id='reinicio_b'>Desconexion</button>";
 		var boton = document.getElementById('basedatos_b');
