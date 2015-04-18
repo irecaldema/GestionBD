@@ -42,7 +42,12 @@ function seleccion_bd_on(bd_seleccionada){
 	document.getElementById('datos_b').disabled = false;
 		//radio del formulario de la lista de bds
 	var bd_seleccionada_combo=document.forms["form_seleccion_bd_on"]["bd_seleccionada"].value;
-	document.getElementById('seleccionado').innerHTML="Base de Datos seleccionada: <b id=bd_seleccionada2>"+bd_seleccionada_combo+"</b>";
+	//document.getElementById('seleccionado').innerHTML="Base de Datos seleccionada: <b id=bd_seleccionada2>"+bd_seleccionada_combo+"</b>";
+	
+	var bd_visible = document.getElementById('seleccionado');
+	bd_visible.innerHTML="Base de Datos seleccionada: <b id=bd_seleccionada2>"+bd_seleccionada_combo+"</b>"
+	bd_visible.hidden=false;
+	
 	alert("base de datos seleccionada");
 		//error vuelta a index tras alert
 }
@@ -58,6 +63,7 @@ function reinicio(){
 	
 	document.getElementById('xervidor').innerHTML="...";
 	document.getElementById('uxuario').innerHTML="...";
+	document.getElementById('seleccionado').hidden=true;
 	
 }
 

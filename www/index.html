@@ -43,9 +43,11 @@
 	   			<br/>
 	   			<div id="desconexion" align="right"></div>
 	   			<div data-role="controlgroup">
-		   		    <button onclick="reinicio();location.href='#DatosConexion'" data-rel="dialog" class="ui-corner-all" data-theme="b" data-transition="flip">Datos de conexion</button>
+		   		    <button onclick="location.href='#DatosConexion'" data-rel="dialog" class="ui-corner-all" data-theme="b" data-transition="flip">Datos de conexion</button>
 		   		    <button disabled onclick="location.href='#BaseDatos'" 		data-rel="dialog" class="ui-corner-all" data-theme="b" data-transition="flip" id="basedatos_b" >Base de datos</button>
-		   			<div id="seleccionado"></div>
+		   			
+		   			<div id="seleccionado"></div><!-- se llena al seleccionar una base de datos-->
+					
 					<button disabled onclick="location.href='#Tablas'" 			data-rel="dialog" class="ui-corner-all" data-theme="b" data-transition="flip" id="tablas_b" >Tablas</button>
 					<button disabled onclick="location.href='#Datos'" 			data-rel="dialog" class="ui-corner-all" data-theme="b" data-transition="flip" id="datos_b" >Datos</button>
 				</div>	
@@ -125,8 +127,7 @@
 			   		<div id="body2" data-role="main" class="ui-content">
 			   			<!--Bases de datos a elegir-->
 			   			<form id="form_seleccion_bd_on" method='post' enctype='application/json' >
-			   				<!--error en la generacion de los botones del formulario -->
-							<div id="lista_bds"></div><!-- VACIOOOOOOOOOOOOOO-->
+							<div id="lista_bds"></div>
 							<input type="submit" onclick="seleccion_bd_on()" value="seleccionar">
 						</form>	
 					</div>
