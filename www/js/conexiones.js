@@ -6,8 +6,6 @@ var usuario="";
 var contrasena="";
 
 $(document).ready(function(){
-    
-
 
     $( "#login" ).submit(function( event ) {
         
@@ -86,40 +84,30 @@ $(document).ready(function(){
         });
 
     });
-});
 
     function mostrar_bds_on(){
-        alert("funcion mostrar bd ...");
-        
-        console.log("submit");
+        //alert("funcion mostrar bd ...");
         // Clear result div
         $("#lista_bds").html('...');
-
-
+        
         var formData = new Array();
         formData.push(usuario);
         formData.push(contrasena);
         var gestion = {name:"gestion_bd",value:"mostrar"};
         formData.push(gestion)
         $.ajax({
-            //type: "GET",
             type: "POST",
             url: "https://base-de-datos-pruebas-zubiri.c9.io/gestorBD.php",
             dataType: "json",
             data: formData,
-            //dataType: "html",
 
             success: function(data){
                 console.log(data);
                 var bds_zzz = data.respuesta;
                 var lista_zzz = document.getElementById('lista_bds').innerHTML;
                 for (var i=0;i<bds_zzz.length;i++) {
-                     //añadir li a ul
+                     //añadir li a ul ok
                      if (i==0){
-                         //Uncaught ReferenceError: bss_zzz is not defined
-                         //lista_zzz bds_zzz[0] <input type='Radio' name='bd_seleccionada' value=information_schema>information_schema
-                         //concatenacion
-                         //lista_zzz bds_zzz[1] <input type='Radio' name='bd_seleccionada' value=information_schema>information_schema<input type='Radio' name='bd_seleccionada' value=information_schema>information_schema
                         lista_zzz ="<input type='Radio' name='bd_seleccionada' value=\'"+bds_zzz[i]+"\'>"+bds_zzz[i]; 
                         lista_zzz+="<br/>";
                      }else{
@@ -136,3 +124,5 @@ $(document).ready(function(){
             }
         });
     }
+    
+});    

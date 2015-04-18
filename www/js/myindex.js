@@ -37,12 +37,14 @@ function crear_bd(nombre_bd){
 	alert("la base de datos "+nombre_bd+" ha sido creada");
 }
 
-function seleccion_bd_on(){
+function seleccion_bd_on(bd_seleccionada){
 	document.getElementById('tablas_b').disabled = false;
 	document.getElementById('datos_b').disabled = false;
-																										//radio del formulario de la lista de bds
-	document.getElementById('seleccionado').innerHTML="Base de Datos seleccionada: <b id=bd_seleccionada2>"+$_POST["bd_seleccionada"]+"</b>";
+		//radio del formulario de la lista de bds
+	var bd_seleccionada_combo=document.forms["form_seleccion_bd_on"]["bd_seleccionada"].value;
+	document.getElementById('seleccionado').innerHTML="Base de Datos seleccionada: <b id=bd_seleccionada2>"+bd_seleccionada_combo+"</b>";
 	alert("base de datos seleccionada");
+		//error vuelta a index tras alert
 }
 
 function reinicio(){
