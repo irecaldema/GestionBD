@@ -186,19 +186,29 @@
 					<a href="#Inicio" data-role="button" data-inline="false" data-rel="dialog" data-theme="b" data-transition="slidedown"><b>volver</b></a>
 			</div>
 			<!--Formulario para crear tablas en la bd seleccioanda -->  <!-- EN CONSTRUCCION -->
-			<div data-role="page" id="CrearBD">
+			<div data-role="page" id="CrearTabla">
 				<div id="marco" data-role="header">
-			    	<h1>Crear BD</h1>
+			    	<h1>Crear Tabla</h1>
 			  	</div>
 			   	<div data-role="main" class="ui-content">
-					<form id="form_crearBD" method='post' enctype='application/json' >
+					<form id="form_crearTabla" method='post' enctype='application/json' >
 						<center><table border=0>
 						<tr>
-							<td>nombre de la base de datos: </td>
-							<td><input id="n_bd" name='n_bd' type="text" size=25 value="nombre"></td>
+							<td>nombre de la tabla: </td>
+							<td><input id="n_tabla" name='n_tabla' type="text" size=25 value="nombre"></td>
 						</tr>
 						<tr>
-							<td colspan=2><input name='crearBD' type="submit" value="crear"></td>
+							<td>campos: </td>
+							<td>
+								<input id="campos" name='campos' type="textarea" rows="10" cols="40" size=25 value=
+								"ID_Contact mediumint(8) unsigned default null auto_increment,Name varchar(50) not null,Email varchar(50) not null,Phone varchar(15) not null,PRIMARY KEY (ID_Contact)">
+							</td>
+						</tr>
+						<tr/>
+						<tr/>
+						<tr/>	
+						<tr>
+							<td colspan=2><input type="submit" value="crear"></td>
 						</tr>
 						</table></center>
 					</form>	

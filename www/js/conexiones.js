@@ -6,11 +6,8 @@ var usuario="";
 var contrasena="";
 
 $(document).ready(function(){
-    
-
 
     $( "#login" ).submit(function( event ) {
-        
         $( "#rexultado1" ).html("...");
         console.log("login submit conexiones");
         /* Stop form from submitting normally */
@@ -50,20 +47,54 @@ $(document).ready(function(){
     });
     
     $( "#form_crearBD" ).submit(function( event ) {
-        //alert("crear bd submit ...");
-
         console.log("crear bd submit conexiones");
         //Stop form from submitting normally 
         event.preventDefault();
-        // Clear result div
-        $("#contentDiv").html('...');
-
 
         var formData = $(this).serializeArray();
         formData.push(usuario);
         formData.push(contrasena);
         var gestion = {name:"gestion_bd",value:"crear"};
-        formData.push(gestion)
+        formData.push(gestion);
+        $.ajax({
+            type: "POST",
+            url: "https://base-de-datos-pruebas-zubiri.c9.io/gestorBD.php",
+            dataType: "json",
+            data: formData,
+
+            success: function(data){
+                console.log(data);
+                alert(data.resultado+": "+data.nombre_tabla)
+
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown) {
+                //alert("Status: " + textStatus); alert("Error: " + errorThrown);
+                console.log(XMLHttpRequest.responseText);
+            }
+
+        });
+
+    });
+    
+    $( "#form_crearTabla" ).submit(function( event ) {
+        console.log("crear tabla submit conexiones");
+        //Stop form from submitting normally 
+        event.preventDefault();
+        // Clear result div
+        $("#resultado_crear_tabla").html('...');
+
+
+        var formData = $(this).serializeArray();
+        formData.push(usuario);
+        formData.push(contrasena);
+        
+        var bd_seleccionada = $("#bd_seleccionada2").html();
+        var n_bd = {name:"n_bd",value:bd_seleccionada}
+        formData.push(n_bd);
+        
+        var gestion = {name:"gestion_tabla",value:"crear"};
+        formData.push(gestion);
+        
         $.ajax({
             //type: "GET",
             type: "POST",
@@ -79,6 +110,7 @@ $(document).ready(function(){
             },
             error: function(XMLHttpRequest, textStatus, errorThrown) {
                 //alert("Status: " + textStatus); alert("Error: " + errorThrown);
+                console.log("error en la creacion de la tabla");
                 console.log(XMLHttpRequest.responseText);
                 //$( "#contentDiv" ).html(XMLHttpRequest.responseText);
             }
@@ -91,8 +123,6 @@ $(document).ready(function(){
 
 function mostrar_bds_on(){
     console.log("mostrar bds funcion conexiones");
-    //alert("funcion mostrar bd ...");
-    // Clear result div
     $("#lista_bds").html('...');
     
     var formData = new Array();
@@ -125,25 +155,23 @@ function mostrar_bds_on(){
         error: function(XMLHttpRequest, textStatus, errorThrown) {
             alert("Status: " + textStatus); alert("Error: " + errorThrown);
             console.log(XMLHttpRequest.responseText);
-            //$( "#contentDiv" ).html(XMLHttpRequest.responseText);
         }
     });
 }
     
 function mostrar_tablas_on(){
     console.log("mostrar tablas funcion conexiones");
-    //alert("funcion mostrar bd ...");
-    // Clear result div
     $("#lista_tablas").html('...');
     
     var formData = new Array();
     formData.push(usuario);
     formData.push(contrasena);
     var bd_seleccionada = $("#bd_seleccionada2").html();
-    var bd_n = {name:"bd_n",value:bd_seleccionada}
-    formData.push(bd_n);
+    var n_bd = {name:"n_bd",value:bd_seleccionada}
+    formData.push(n_bd);
     var gestion = {name:"gestion_tabla",value:"mostrar"};
     formData.push(gestion);
+    
     $.ajax({
         type: "POST",
         url: "https://base-de-datos-pruebas-zubiri.c9.io/gestorTablas.php",
