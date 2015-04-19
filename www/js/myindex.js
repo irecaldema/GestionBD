@@ -28,8 +28,12 @@ function seleccion_bd_off(){
 	
 	document.getElementById('tablas_b').disabled = false;
 	document.getElementById('datos_b').disabled = false;
-	document.getElementById('seleccionado').innerHTML="<button disabled data-rel=\"dialog\" class=\"ui-corner-all\" data-theme=\"b\" data-transition=\"flip\" id=\"selec_bd_b\" >Base de Datos seleccionada: </button><!--cuando se selecciona nombre de BD-->";
-	alert("base de datos seleccionado");
+	
+	//radio del formulario de la lista de bds
+	var bd_seleccionada_radio=document.forms["form_seleccion_bd"]["bd_seleccionada"].value;
+	var bd_visible = document.getElementById('seleccionado');
+	bd_visible.innerHTML="Base de Datos seleccionada: <b id=bd_seleccionada2>"+bd_seleccionada_radio+"</b>"
+	bd_visible.hidden=false;
 }
 
 function crear_bd(nombre_bd){
@@ -37,18 +41,31 @@ function crear_bd(nombre_bd){
 	alert("la base de datos "+nombre_bd+" ha sido creada");
 }
 
-function seleccion_bd_on(bd_seleccionada){
+function seleccion_bd_on(){
 	document.getElementById('tablas_b').disabled = false;
 	document.getElementById('datos_b').disabled = false;
-		//radio del formulario de la lista de bds
-	var bd_seleccionada_combo=document.forms["form_seleccion_bd_on"]["bd_seleccionada"].value;
-	//document.getElementById('seleccionado').innerHTML="Base de Datos seleccionada: <b id=bd_seleccionada2>"+bd_seleccionada_combo+"</b>";
 	
+	//radio del formulario de la lista de bds
+	var bd_seleccionada_radio=document.forms["form_seleccion_bd"]["bd_seleccionada"].value;
 	var bd_visible = document.getElementById('seleccionado');
-	bd_visible.innerHTML="Base de Datos seleccionada: <b id=bd_seleccionada2>"+bd_seleccionada_combo+"</b>"
+	bd_visible.innerHTML="Base de Datos seleccionada: <b id=bd_seleccionada2>"+bd_seleccionada_radio+"</b>"
 	bd_visible.hidden=false;
 	
-	alert("base de datos seleccionada");
+	//alert("base de datos seleccionada");
+		//error vuelta a index tras alert
+}
+
+function seleccion_tabla_on(){
+	document.getElementById('tablas_b').disabled = false;
+	document.getElementById('datos_b').disabled = false;
+	
+	//radio del formulario de la lista de bds
+	var tabla_seleccionada_radio=document.forms["form_seleccion_tabla"]["tabla_seleccionada"].value;
+	var tabla_visible = document.getElementById('seleccionado2');
+	tabla_visible.innerHTML="Tabla seleccionada: <b id=tabla_seleccionada2>"+tabla_seleccionada_radio+"</b>"
+	tabla_visible.hidden=false;
+	
+	//alert("base de datos seleccionada");
 		//error vuelta a index tras alert
 }
 
@@ -64,6 +81,7 @@ function reinicio(){
 	document.getElementById('xervidor').innerHTML="...";
 	document.getElementById('uxuario').innerHTML="...";
 	document.getElementById('seleccionado').hidden=true;
+	document.getElementById('seleccionado2').hidden=true;
 	
 }
 
@@ -76,16 +94,26 @@ function conexion_offline(){
 	var boton = document.getElementById('basedatos_b');
 	boton.disabled = false;
 	
-	document.getElementById("enlace_selec_bd").onclick = function() {mostrar_bds_off()};
+	console.log("onclick para conexion offline");
+	document.getElementById("enlace_selec_bd").onclick = function(){mostrar_bds_off()};
+	document.getElementById("seleccionar_bd").onclick = function(){seleccion_bd_off()};
+	
+	document.getElementById("enlace_selec_tabla").onclick = function(){mostrar_tablas_off()};
+	document.getElementById("seleccionar_tabla").onclick = function(){seleccion_tabla_off()};
 }
 
 function conexion_online(){
 	if (document.getElementById('rexultado1').innerHTML=="online"){
 		
-		document.getElementById("enlace_selec_bd").onclick = function(){mostrar_bds_on()};
+		
 		//var boton_onclick = document.getElementById("enlace_selec_bd"); 		modo 2 de hacer lo mismo
 		//boton_onclick.setAttribute("onClick",function(){mostrar_bds_on()});
-		console.log("onclick xD");
+		console.log("onclick para conexion online");
+		document.getElementById("enlace_selec_bd").onclick = function(){mostrar_bds_on()};
+		document.getElementById("seleccionar_bd").onclick = function(){seleccion_bd_on()};
+		
+		document.getElementById("enlace_selec_tabla").onclick = function(){mostrar_tablas_on()};
+		document.getElementById("seleccionar_tabla").onclick = function(){seleccion_tabla_on()};
 		
 		document.getElementById('desconexion').innerHTML="<button onclick='reinicio()' id='reinicio_b'>Desconexion</button>";
 		var boton = document.getElementById('basedatos_b');
