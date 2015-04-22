@@ -129,10 +129,10 @@
 			  		</div>
 			   		<div data-role="main" class="ui-content">
 			   			<!--Bases de datos a elegir-->
-			   			<form id="form_seleccion_bd" method='post'>
+			   			<form id="form_seleccion_bd" method='post' enctype='application/json'>
 							<div id="lista_bds"></div>
 							<!--onclick definido en conexion_online -->
-							<input id="seleccionar_bd" type="submit" onclick="" value="seleccionar">
+							<input id="seleccionar_bd" type="button" onclick="" value="seleccionar">
 						</form>	
 					</div>
 					<a href="#Inicio" data-role="button" data-inline="false" data-rel="dialog" data-theme="b" data-transition="slidedown"><b>volver</b></a>
@@ -180,7 +180,7 @@
 			   			<form id="form_seleccion_tabla" method='post'>
 							<div id="lista_tablas"></div>
 							<!--onclick definido en conexion_online -->
-							<input id="seleccionar_tabla" type="submit" onclick="" value="seleccionar">
+							<input id="seleccionar_tabla" type="button" onclick="" value="seleccionar">
 						</form>	
 					</div>
 					<a href="#Inicio" data-role="button" data-inline="false" data-rel="dialog" data-theme="b" data-transition="slidedown"><b>volver</b></a>
@@ -235,7 +235,7 @@
 			   			<!--Bases de datos a elegir-->
 			   			<form id="form_seleccion_dato" method='post'>
 							<div id="lista_datos"></div> <!-- mostrar datos online en conexiones-->
-							<input id="seleccionar_dato" type="submit" onclick="" value="seleccionar"> <!--onclick definido en conexion_online -->
+							<input id="seleccionar_dato" type="button" onclick="" value="seleccionar"> <!--onclick definido en conexion_online -->
 						</form>	
 					</div>
 					<a href="#Inicio" data-role="button" data-inline="false" data-rel="dialog" data-theme="b" data-transition="slidedown"><b>volver</b></a>

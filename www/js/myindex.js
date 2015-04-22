@@ -32,7 +32,7 @@ function seleccion_bd_off(){
 	//radio del formulario de la lista de bds
 	var bd_seleccionada_radio=document.forms["form_seleccion_bd"]["bd_seleccionada"].value;
 	var bd_visible = document.getElementById('seleccionado');
-	bd_visible.innerHTML="Base de Datos seleccionada: <b id=bd_seleccionada2>"+bd_seleccionada_radio+"</b>"
+	bd_visible.innerHTML="Base de Datos seleccionada: <b id=bd_seleccionada2>"+bd_seleccionada_radio+"</b>";
 	bd_visible.hidden=false;
 }
 
@@ -48,23 +48,23 @@ function seleccion_bd_on(){
 	//radio del formulario de la lista de bds
 	var bd_seleccionada_radio=document.forms["form_seleccion_bd"]["bd_seleccionada"].value;
 	var bd_visible = document.getElementById('seleccionado');
-	bd_visible.innerHTML="Base de Datos seleccionada: <b id=bd_seleccionada2>"+bd_seleccionada_radio+"</b>"
+	bd_visible.innerHTML="Base de Datos seleccionada: <b id=bd_seleccionada2>"+bd_seleccionada_radio+"</b>";
 	bd_visible.hidden=false;
 	
-	//alert("base de datos seleccionada");
+	alert("base de datos seleccionada");
 		//error vuelta a index tras alert
 }
 
 function seleccion_tabla_on(){
 	var nombre_tabla_x = document.forms["form_seleccion_tabla"]["tabla_seleccionada"].value;
-	if(nombre_tabla_x!=null||nombre_tabla_x!=""){
+	if(nombre_tabla_x!=null&&nombre_tabla_x!=""){
 	document.getElementById('tablas_b').disabled = false;
 	document.getElementById('datos_b').disabled = false;
 	
 	//radio del formulario de la lista de bds
 	var tabla_seleccionada_radio=document.forms["form_seleccion_tabla"]["tabla_seleccionada"].value;
 	var tabla_visible = document.getElementById('seleccionado2');
-	tabla_visible.innerHTML="Tabla seleccionada: <b id=tabla_seleccionada2>"+tabla_seleccionada_radio+"</b>"
+	tabla_visible.innerHTML="Tabla seleccionada: <b id=tabla_seleccionada2>"+tabla_seleccionada_radio+"</b>";
 	tabla_visible.hidden=false;
 	}
 	//rellenar formulario form_crearDato crear dato
