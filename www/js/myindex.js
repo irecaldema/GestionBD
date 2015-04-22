@@ -56,6 +56,8 @@ function seleccion_bd_on(){
 }
 
 function seleccion_tabla_on(){
+	var nombre_tabla_x = document.forms["form_seleccion_tabla"]["tabla_seleccionada"].value;
+	if(nombre_tabla_x!=null||nombre_tabla_x!=""){
 	document.getElementById('tablas_b').disabled = false;
 	document.getElementById('datos_b').disabled = false;
 	
@@ -64,9 +66,8 @@ function seleccion_tabla_on(){
 	var tabla_visible = document.getElementById('seleccionado2');
 	tabla_visible.innerHTML="Tabla seleccionada: <b id=tabla_seleccionada2>"+tabla_seleccionada_radio+"</b>"
 	tabla_visible.hidden=false;
-	
-	//alert("base de datos seleccionada");
-		//error vuelta a index tras alert
+	}
+	//rellenar formulario form_crearDato crear dato
 }
 
 function reinicio(){
@@ -114,6 +115,9 @@ function conexion_online(){
 		
 		document.getElementById("enlace_selec_tabla").onclick = function(){mostrar_tablas_on()};
 		document.getElementById("seleccionar_tabla").onclick = function(){seleccion_tabla_on()};
+		
+		//document.getElementById("enlace_selec_dato").onclick = function(){mostrar_datos_on()};
+		//document.getElementById("seleccionar_dato").onclick = function(){seleccion_dato_on()};
 		
 		document.getElementById('desconexion').innerHTML="<button onclick='reinicio()' id='reinicio_b'>Desconexion</button>";
 		var boton = document.getElementById('basedatos_b');

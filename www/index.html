@@ -157,7 +157,7 @@
 				</div>
 				<a href="#Inicio" data-role="button" data-inline="false" data-rel="dialog" data-theme="b" data-transition="slidedown"><b>volver</b></a>
 			</div>
-		<!--PAGINA Gestion de las tablas: -->   <!-- EN CONSTRUCCION -->
+		<!--PAGINA Gestion de las tablas: -->   <!-- -->
 		<div data-role="page" id="Tablas">
 				<div id="marco" data-role="header">
 		    		<h1>TABLAS</h1>
@@ -170,7 +170,7 @@
 				</div>
 				<a href="#Inicio" data-role="button" data-inline="false" data-rel="dialog" data-theme="b" data-transition="slidedown"><b>volver</b></a>
 		</div>
-			<!--Muestra de tablas de la base de datos seleccionada -->  <!-- EN CONSTRUCCION -->
+			<!--Muestra de tablas de la base de datos seleccionada -->  <!-- -->
 			<div data-role="page" id="SeleccionadorTabla">
 					<div id="marco" data-role="header">
 			    		<h1>SELECCION DE TABLAS</h1>
@@ -200,13 +200,11 @@
 						<tr>
 							<td>campos: </td>
 							<td>
-								<input id="campos" name='campos' type="textarea" rows="10" cols="40" size=25 value=
-								"ID_Contact mediumint(8) unsigned default null auto_increment,Name varchar(50) not null,Email varchar(50) not null,Phone varchar(15) not null,PRIMARY KEY (ID_Contact)">
+								<!--<input id="campos" name='campos' type="textarea" rows="10" cols="40" value=
+								"ID_Contact mediumint(8) unsigned default null auto_increment,Name varchar(50) not null,Email varchar(50) not null,Phone varchar(15) not null,PRIMARY KEY (ID_Contact)">-->
+								<input id="campos" name='campos' type="text" size=25 value="nombre varchar(20)">
 							</td>
 						</tr>
-						<tr/>
-						<tr/>
-						<tr/>	
 						<tr>
 							<td colspan=2><input type="submit" value="crear"></td>
 						</tr>
@@ -223,9 +221,53 @@
 		   		<div id="body4" data-role="main" class="ui-content">
 					<br/>
 					<!--onclick definido en seleccion_tabla -->
-					<a href="#CrearDato" data-role="button" data-inline="false" data-rel="dialog" data-theme="b" data-transition="slidedown"><b>Crear BD</b></a>					
+					<a href="#SeleccionadorDato" id="enlace_selec_dato" data-role="button" data-inline="false" data-rel="dialog" data-theme="b" data-transition="slidedown"><b>Muestra y seleccion de Datos</b></a>
+					<a href="#CrearDato" data-role="button" data-inline="false" data-rel="dialog" data-theme="b" data-transition="slidedown"><b>Insertar dato</b></a>					
 				</div>
 				<a href="#Inicio" data-role="button" data-inline="false" data-rel="dialog" data-theme="b" data-transition="slidedown"><b>volver</b></a>
 		</div>
+			<!--Muestra de tablas de la base de datos seleccionada -->  <!-- EN CONSTRUCCION -->
+			<div data-role="page" id="SeleccionadorTabla">
+					<div id="marco" data-role="header">
+			    		<h1>SELECCION DE DATOS</h1>
+			  		</div>
+			   		<div data-role="main" class="ui-content">
+			   			<!--Bases de datos a elegir-->
+			   			<form id="form_seleccion_dato" method='post'>
+							<div id="lista_datos"></div> <!-- mostrar datos online en conexiones-->
+							<input id="seleccionar_dato" type="submit" onclick="" value="seleccionar"> <!--onclick definido en conexion_online -->
+						</form>	
+					</div>
+					<a href="#Inicio" data-role="button" data-inline="false" data-rel="dialog" data-theme="b" data-transition="slidedown"><b>volver</b></a>
+			</div>		
+			<!--Formulario para insertar datos en la bd seleccioanda -->  <!-- EN CONSTRUCCION -->
+			<div data-role="page" id="CrearDato">
+				<div id="marco" data-role="header">
+			    	<h1>Crear Dato</h1>
+			  	</div>
+			   	<div data-role="main" class="ui-content">
+					<form id="form_crearDato" method='post' enctype='application/json' >
+						<center><table border=0>
+						<tr>
+							<!-- construccion segun estructura de la tabla seleccion de tabla-->
+							<td> </td>
+							<td><input id="" name='' type="" size=25 value=""></td>
+						</tr>
+						<tr>
+							<td>campos: </td>
+							<td>
+								<!--<input id="campos" name='campos' type="textarea" rows="10" cols="40" value=
+								"ID_Contact mediumint(8) unsigned default null auto_increment,Name varchar(50) not null,Email varchar(50) not null,Phone varchar(15) not null,PRIMARY KEY (ID_Contact)">-->
+								<input id="campos" name='campos' type="text" size=25 value="nombre varchar(20)">
+							</td>
+						</tr>
+						<tr>
+							<td colspan=2><input type="submit" value="crear"></td>
+						</tr>
+						</table></center>
+					</form>	
+				</div>
+				<a href="#Inicio" data-role="button" data-inline="false" data-rel="dialog" data-theme="b" data-transition="slidedown"><b>volver</b></a>
+			</div>
 	</body>
 </html>
