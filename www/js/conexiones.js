@@ -251,27 +251,32 @@ function mostrar_datos_on(){
             // array de vuelta del 
             //php $data = array('columnas' => $nombres_columnas, 'datos' => $datos, 'resultado' => 'ok');
             var columnas_zzz = data.columnas;
+            //["ID_Contact", "Name", "Email", "Phone"]
             var datos_zzz = data.datos;
             var lista_zzz = document.getElementById('lista_datos').innerHTML; // tabla 6x4
+            var n_dato=0;
             for (var i=0;i<(datos_zzz.length/columnas_zzz.length);i++) { //24/4=6  6 vueltas 6 filas
                  if (i==0){ //primera fila nombres de las columnas
-                    lista_zzz ="<table><tr><td/>";
+                    lista_zzz ="<table border=1><tr><td/>";
                     for(var n=0;n<columnas_zzz.length;n++) { //4 vueltas 4 celdas
-                        lista_zzz ="<td>"+columnas_zzz[n]+"</td>";
+                        lista_zzz +="<td>"+columnas_zzz[n]+"</td>";
                     }
                     //"<input type='Radio' name='tabla_seleccionada' value=\'"+tablas_zzz[i]+"\'>"+tablas_zzz[i]; 
                     lista_zzz+="</tr>";
                  }else{
-                    lista_zzz+="<tr>";
+                    lista_zzz+="<tr>";//boton sin terminar
+                    lista_zzz+="<td><input type='Radio' name='tabla_seleccionada' value=\'"+datos_zzz[n_dato]+"\'>"+i+"</td>"; //correciones pendientes
                     for(var m=0;m<columnas_zzz.length;m++)// 4 vueltas 4 celdas
                     {
-                        lista_zzz +="<td>"+datos_zzz[i]+"</td>";
+                        lista_zzz +="<td>"+datos_zzz[n_dato]+"</td>";
+                        n_dato++;
                         //"<input type='Radio' name='tabla_seleccionada' value=\'"+tablas_zzz[i]+"\'>"+tablas_zzz[i];
                     }
                     lista_zzz+="</tr>";
-                    lista_zzz+="<br/>";
                  }
             }
+            lista_zzz+="</table>";
+            lista_zzz+="</br>";
             $("#lista_datos").html(lista_zzz);
         },
         error: function(XMLHttpRequest, textStatus, errorThrown) {
