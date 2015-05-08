@@ -52,7 +52,6 @@ function seleccion_bd_on(){
 	bd_visible.hidden=false;
 	
 	alert("base de datos seleccionada");
-		//error vuelta a index tras alert
 }
 
 function seleccion_tabla_on(){
@@ -67,6 +66,7 @@ function seleccion_tabla_on(){
 	tabla_visible.innerHTML="Tabla seleccionada: <b id=tabla_seleccionada2>"+tabla_seleccionada_radio+"</b>";
 	tabla_visible.hidden=false;
 	}
+	alert("base de datos seleccionada");
 	//rellenar formulario form_crearDato crear dato
 }
 

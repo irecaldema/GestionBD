@@ -44,15 +44,15 @@
 	   			<div id="desconexion" align="right"></div>
 	   			<div data-role="controlgroup">
 		   		    <button onclick="location.href='#DatosConexion'" data-rel="dialog" class="ui-corner-all" data-theme="b" data-transition="flip">Datos de conexion</button>
-		   		    <button disabled onclick="location.href='#BaseDatos'" 		data-rel="dialog" class="ui-corner-all" data-theme="b" data-transition="flip" id="basedatos_b" >Base de datos</button>
+		   		    <button disabled onclick="location.href='#BaseDatos'" data-rel="dialog" class="ui-corner-all" data-theme="b" data-transition="flip" id="basedatos_b" >Base de datos</button>
 		   			
 		   			<div id="seleccionado"></div><!-- se llena al seleccionar una base de datos-->
 					
-					<button disabled onclick="location.href='#Tablas'" 			data-rel="dialog" class="ui-corner-all" data-theme="b" data-transition="flip" id="tablas_b" >Tablas</button>
+					<button disabled onclick="location.href='#Tablas'" data-rel="dialog" class="ui-corner-all" data-theme="b" data-transition="flip" id="tablas_b" >Tablas</button>
 					
 					<div id="seleccionado2"></div><!-- se llena al seleccionar una base de datos-->
 					
-					<button disabled onclick="location.href='#Datos'" 			data-rel="dialog" class="ui-corner-all" data-theme="b" data-transition="flip" id="datos_b" >Datos</button>
+					<button disabled onclick="location.href='#Datos'" data-rel="dialog" class="ui-corner-all" data-theme="b" data-transition="flip" id="datos_b" >Datos</button>
 				</div>	
 			</div>
 			<div id="rexultado1" hidden ></div>
@@ -170,7 +170,7 @@
 				</div>
 				<a href="#Inicio" data-role="button" data-inline="false" data-rel="dialog" data-theme="b" data-transition="slidedown"><b>volver</b></a>
 		</div>
-			<!--Muestra de tablas de la base de datos seleccionada -->  <!-- -->
+			<!--Muestra de tablas de la base de datos seleccionada -->  <!-- Revisando error duplicidades -->
 			<div data-role="page" id="SeleccionadorTabla">
 					<div id="marco" data-role="header">
 			    		<h1>SELECCION DE TABLAS</h1>
@@ -180,7 +180,7 @@
 			   			<form id="form_seleccion_tabla" method='post'>
 							<div id="lista_tablas"></div>
 							<!--onclick definido en conexion_online -->
-							<input id="seleccionar_tabla" type="button" onclick="" value="seleccionar">
+							<input id="seleccionar_tabla" type="button" onclick="" value="seleccionar"> <!-- error en onclick -->
 						</form>	
 					</div>
 					<a href="#Inicio" data-role="button" data-inline="false" data-rel="dialog" data-theme="b" data-transition="slidedown"><b>volver</b></a>
@@ -227,7 +227,7 @@
 				<a href="#Inicio" data-role="button" data-inline="false" data-rel="dialog" data-theme="b" data-transition="slidedown"><b>volver</b></a>
 		</div>
 			<!--Muestra de tablas de la base de datos seleccionada -->  <!-- EN CONSTRUCCION -->
-			<div data-role="page" id="SeleccionadorTabla">
+			<div data-role="page" id="SeleccionadorDato">
 					<div id="marco" data-role="header">
 			    		<h1>SELECCION DE DATOS</h1>
 			  		</div>
