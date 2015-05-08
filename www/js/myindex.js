@@ -63,7 +63,7 @@ function seleccion_tabla_on(){
 		tabla_visible.innerHTML="Tabla seleccionada: <b id=tabla_seleccionada2>"+tabla_seleccionada_radio+"</b>";
 		tabla_visible.hidden=false;
 	}
-	alert("base de datos seleccionada");
+	alert("tabla seleccionada");
 }
 
 function reinicio(){

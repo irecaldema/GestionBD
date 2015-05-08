@@ -250,21 +250,20 @@ function mostrar_datos_on(){
             console.log(data);
             // array de vuelta del 
             //php $data = array('columnas' => $nombres_columnas, 'datos' => $datos, 'resultado' => 'ok');
-            var nombre_columnas_zzz = data.nombre_columnas;
+            var columnas_zzz = data.columnas;
             var datos_zzz = data.datos;
-            var lista_zzz = document.getElementById('lista_Datos').innerHTML; // --><--
-            for (var i=0;i<(datos_zzz.length/nombre_columnas_zzz.length);i++) {
-                 //añadir li a ul ok
-                 if (i==0){
+            var lista_zzz = document.getElementById('lista_datos').innerHTML; // tabla 6x4
+            for (var i=0;i<(datos_zzz.length/columnas_zzz.length);i++) { //24/4=6  6 vueltas 6 filas
+                 if (i==0){ //primera fila nombres de las columnas
                     lista_zzz ="<table><tr><td/>";
-                    for(var n=0;n<nombre_columnas_zzz.length;n++) {
-                        lista_zzz ="<td>"+nombre_columnas_zzz[n]+"</td>";
+                    for(var n=0;n<columnas_zzz.length;n++) { //4 vueltas 4 celdas
+                        lista_zzz ="<td>"+columnas_zzz[n]+"</td>";
                     }
                     //"<input type='Radio' name='tabla_seleccionada' value=\'"+tablas_zzz[i]+"\'>"+tablas_zzz[i]; 
                     lista_zzz+="</tr>";
                  }else{
                     lista_zzz+="<tr>";
-                    for(var m=0;m<nombre_columnas_zzz.length;m++)
+                    for(var m=0;m<columnas_zzz.length;m++)// 4 vueltas 4 celdas
                     {
                         lista_zzz +="<td>"+datos_zzz[i]+"</td>";
                         //"<input type='Radio' name='tabla_seleccionada' value=\'"+tablas_zzz[i]+"\'>"+tablas_zzz[i];
