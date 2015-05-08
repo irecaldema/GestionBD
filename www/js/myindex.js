@@ -79,7 +79,6 @@ function reinicio(){
 	document.getElementById('uxuario').innerHTML="...";
 	document.getElementById('seleccionado').hidden=true;
 	document.getElementById('seleccionado2').hidden=true;
-	
 }
 
 function conexion_offline(){
@@ -118,6 +117,5 @@ function conexion_online(){
 		document.getElementById('desconexion').innerHTML="<button onclick='reinicio()' id='reinicio_b'>Desconexion</button>";
 		var boton = document.getElementById('basedatos_b');
 		boton.disabled = false;
-
 	}
 }
