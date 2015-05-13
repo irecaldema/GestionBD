@@ -1,4 +1,3 @@
-// http://api.jquery.com/jQuery.ajax/
 // http://api.jquery.com/jquery.ajax/
 // http://api.jquery.com/jquery.get/
 

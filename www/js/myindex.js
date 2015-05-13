@@ -66,7 +66,7 @@ function seleccion_tabla_on(){
 	alert("tabla seleccionada");
 }
 
-function reinicio(){
+/*function reinicio(){
 	var boton1 = document.getElementById('basedatos_b');
 	boton1.disabled = true;
 	var boton2 = document.getElementById('tablas_b');
@@ -79,10 +79,10 @@ function reinicio(){
 	document.getElementById('uxuario').innerHTML="...";
 	document.getElementById('seleccionado').hidden=true;
 	document.getElementById('seleccionado2').hidden=true;
-}
+}*/
 
 function conexion_offline(){
-	document.getElementById('desconexion').innerHTML="<button onclick='reinicio()' id='reinicio_b'>Desconexion</button>";
+	//document.getElementById('desconexion').innerHTML="<button onclick='reinicio()' id='reinicio_b'>Desconexion</button>";
 	
 	document.getElementById('xervidor').innerHTML="<b>offline</b>";
 	document.getElementById('uxuario').innerHTML="<b>local</b>";
@@ -114,7 +114,7 @@ function conexion_online(){
 		document.getElementById("enlace_selec_dato").onclick = function(){mostrar_datos_on()};
 		document.getElementById("borrar_dato").onclick = function(){borrar_dato_on()};
 		
-		document.getElementById('desconexion').innerHTML="<button onclick='reinicio()' id='reinicio_b'>Desconexion</button>";
+		//document.getElementById('desconexion').innerHTML="<button onclick='reinicio()' id='reinicio_b'>Desconexion</button>";
 		var boton = document.getElementById('basedatos_b');
 		boton.disabled = false;
 	}
