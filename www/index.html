@@ -26,7 +26,7 @@
 	<body>
 		<!--PAGINA 1: INICIO-->
 		<div data-role="page" id="Inicio">
-			<div align="center" id="marco" data-role="header">
+			<div align="center" data-role="header">
 				<h1>GESTION DE BD</h1>
 				<br/>
 				<div class="inlineLeft2"><label>Servidor: </label></div>
@@ -58,7 +58,7 @@
 		</div> 
 		<!--PAGINA Datos de conexion y conexion -->
 		<div data-role="page" id="DatosConexion">
-			<div id="marco" data-role="header">
+			<div data-role="header">
 		    	<h1>Datos de conexion</h1>
 		    </div>	
 	  		<div id="body1" data-role="main" class="ui-content">
@@ -72,7 +72,7 @@
 		</div>
 			<!--Pagina de conexion offline-->
 			<div data-role="page" id="BDOffline">
-				<div id="marco" data-role="header">
+				<div data-role="header">
 			   		<h1>BD Offline</h1>
 				</div>
 				<div id="body1_1" data-role="main" class="ui-content">
@@ -83,7 +83,7 @@
 			</div>
 			<!--Pagina de conexion online-->
 			<div data-role="page" id="BDOnline">
-				<div id="marco" data-role="header">
+				<div data-role="header">
 			   		<h1>BD Online</h1>
 				</div>
 				<div id="body1_2" data-role="main" class="ui-content">
@@ -107,7 +107,7 @@
 			</div>
 		<!--PAGINA Gestion de las Bases de Datos: -->
 		<div data-role="page" id="BaseDatos">
-				<div id="marco" data-role="header">
+				<div data-role="header">
 		    		<h1>BASES DE DATOS</h1>
 		  		</div>
 		   		<div id="body4" data-role="main" class="ui-content">
@@ -120,7 +120,7 @@
 		</div>
 			<!--Muestra de bases de datos y seleccion -->   <!-- ERROR SOLUCIONANDOSE-->
 			<div data-role="page" id="SeleccionadorBD">
-					<div id="marco" data-role="header">
+					<div data-role="header">
 			    		<h1>SELECCION DE BD</h1>
 			  		</div>
 			   		<div data-role="main" class="ui-content">
@@ -135,7 +135,7 @@
 			</div>
 			<!--Formulario para crear bases de datos -->
 			<div data-role="page" id="CrearBD">
-				<div id="marco" data-role="header">
+				<div data-role="header">
 			    	<h1>Crear BD</h1>
 			  	</div>
 			   	<div data-role="main" class="ui-content">
@@ -155,7 +155,7 @@
 			</div>
 		<!--PAGINA Gestion de las tablas: -->   <!-- -->
 		<div data-role="page" id="Tablas">
-				<div id="marco" data-role="header">
+				<div data-role="header">
 		    		<h1>TABLAS</h1>
 		  		</div>
 		   		<div id="body3" data-role="main" class="ui-content">
@@ -168,7 +168,7 @@
 		</div>
 			<!--Muestra de tablas de la base de datos seleccionada -->  <!--  -->
 			<div data-role="page" id="SeleccionadorTabla">
-					<div id="marco" data-role="header">
+					<div data-role="header">
 			    		<h1>SELECCION DE TABLAS</h1>
 			  		</div>
 			   		<div data-role="main" class="ui-content">
@@ -183,7 +183,7 @@
 			</div>
 			<!--Formulario para crear tablas en la bd seleccioanda -->  <!-- -->
 			<div data-role="page" id="CrearTabla">
-				<div id="marco" data-role="header">
+				<div data-role="header">
 			    	<h1>Crear Tabla</h1>
 			  	</div>
 			   	<div data-role="main" class="ui-content">
@@ -211,7 +211,7 @@
 			</div>
 		<!--PAGINA Gestion de los Datos: -->  
 		<div data-role="page" id="Datos">
-				<div id="marco" data-role="header">
+				<div data-role="header">
 		    		<h1>DATOS</h1>
 		  		</div>
 		   		<div id="body4" data-role="main" class="ui-content">
@@ -224,10 +224,10 @@
 		</div>
 			<!--Muestra de daots de la tabla seleccionada -->  <!-- EN CONSTRUCCION -->
 			<div data-role="page" id="SeleccionadorDato">
-					<div id="marco" data-role="header">
+					<div data-role="header">
 			    		<h1>SELECCION DE DATOS</h1>
 			  		</div>
-			   		<div data-role="main" class="ui-content">
+			   		<div id="body5" data-role="main" class="ui-content">
 			   			<!--Bases de datos a elegir-->
 			   			<form id="form_seleccion_dato" method='post'>
 							<div id="lista_datos"></div> <!-- mostrar datos online en conexiones-->
@@ -238,7 +238,7 @@
 			</div>		
 			<!--Formulario para insertar datos en la bd seleccioanda -->  <!-- EN CONSTRUCCION -->
 			<div data-role="page" id="CrearDato">
-				<div id="marco" data-role="header">
+				<div data-role="header">
 			    	<h1>Crear Dato</h1>
 			  	</div>
 			   	<div data-role="main" class="ui-content">
