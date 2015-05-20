@@ -264,7 +264,7 @@ function mostrar_datos_on(){
                     lista_zzz+="</tr>";
                  }else{
                     lista_zzz+="<tr>";//boton sin terminar
-                    lista_zzz+="<td><input type='Radio' name='tabla_seleccionada' value=\'"+datos_zzz[n_dato]+"\'>"+i+"</td>"; //correciones pendientes
+                    //lista_zzz+="<td><input type='Radio' name='tabla_seleccionada' value=\'"+datos_zzz[n_dato]+"\'>"+i+"</td>"; //correciones pendientes
                     for(var m=0;m<columnas_zzz.length;m++)// 4 vueltas 4 celdas
                     {
                         lista_zzz +="<td>"+datos_zzz[n_dato]+"</td>";
