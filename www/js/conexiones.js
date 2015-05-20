@@ -288,6 +288,7 @@ function mostrar_datos_on(){
             $("#lista_datos").html(lista_zzz);
             tabla_crear+="</table>";
             tabla_crear+="</br>";
+            tabla_crear+="<input type='submit' value='crear'>"
             $("#t_crear_d").html(tabla_crear);
         },
         error: function(XMLHttpRequest, textStatus, errorThrown) {

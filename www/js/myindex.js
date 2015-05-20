@@ -99,13 +99,13 @@ function conexion_offline(){
 }
 
 function conexion_online(){
+	console.log("onclick para conexion online");
 	if (document.getElementById('rexultado1').innerHTML=="online"){
 		var boton = document.getElementById('basedatos_b');
 		boton.disabled = false;
-		
 		//var boton_onclick = document.getElementById("enlace_selec_bd"); 		modo 2 de hacer lo mismo
 		//boton_onclick.setAttribute("onClick",function(){mostrar_bds_on()});
-		console.log("onclick para conexion online");
+		
 		document.getElementById("enlace_selec_bd").onclick = function(){mostrar_bds_on()};
 		document.getElementById("seleccionar_bd").onclick = function(){seleccion_bd_on()};
 		
@@ -113,7 +113,7 @@ function conexion_online(){
 		document.getElementById("seleccionar_tabla").onclick = function(){seleccion_tabla_on()};
 		
 		document.getElementById("enlace_selec_dato").onclick = function(){mostrar_datos_on()};
-		document.getElementById("enlace_selec_dato").onclick = function(){crear_datos_on()};
+		document.getElementById("crear_datos").onclick = function(){crear_datos_on()};
 		//document.getElementById("borrar_dato").onclick = function(){borrar_dato_on()};
 		
 		//document.getElementById('desconexion').innerHTML="<button onclick='reinicio()' id='reinicio_b'>Desconexion</button>";
