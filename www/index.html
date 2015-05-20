@@ -217,8 +217,10 @@
 		   		<div id="body4" data-role="main" class="ui-content">
 					<br/>
 					<!--onclick definido en seleccion_tabla -->
-					<a href="#SeleccionadorDato" id="enlace_selec_dato" data-role="button" data-inline="false" data-rel="dialog" data-theme="b" data-transition="slidedown"><b>Muestra de datos</b></a>
-					<a href="#CrearDato" data-role="button" data-inline="false" data-rel="dialog" data-theme="b" data-transition="slidedown"><b>Insertar dato</b></a>					
+					<!-- <a href="#SeleccionadorDato" id="enlace_selec_dato" data-role="button" data-inline="false" data-rel="dialog" data-theme="b" data-transition="slidedown"><b>Muestra de datos</b></a>-->
+					<a href="#SeleccionadorDato" id="enlace_selec_dato" data-role="button" data-inline="false" data-theme="b" ><b>Muestra de datos</b></a>
+					<!--<a href="#CrearDato" id="crear_datos" data-role="button" data-inline="false" data-rel="dialog" data-theme="b" data-transition="slidedown"><b>Insertar dato</b></a>-->
+					<a href="#CrearDato" id="crear_datos" data-role="button" data-inline="false" data-theme="b"><b>Insertar dato</b></a>					
 				</div>
 				<a href="#Inicio" data-role="button" data-inline="false" data-rel="dialog" data-theme="b" data-transition="slidedown"><b>volver</b></a>
 		</div>
@@ -230,8 +232,10 @@
 			   		<div id="body5" data-role="main" class="ui-content">
 			   			<!--Bases de datos a elegir-->
 			   			<form id="form_seleccion_dato" method='post'>
+			   				<center>
 							<div id="lista_datos"></div> <!-- mostrar datos online en conexiones-->
 						<!--	<input id="borrar_dato" type="button" onclick="" value="borrar">--> <!--onclick definido en conexion_online -->
+							</center>
 						</form>	
 					</div>
 					<a href="#Inicio" data-role="button" data-inline="false" data-rel="dialog" data-theme="b" data-transition="slidedown"><b>volver</b></a>
@@ -243,24 +247,9 @@
 			  	</div>
 			   	<div data-role="main" class="ui-content">
 					<form id="form_crearDato" method='post' enctype='application/json' >
-						<center><table border=0>
-						<tr>
-							<!-- construccion segun estructura de la tabla seleccion de tabla-->
-							<td> </td>
-							<td><input id="" name='' type="" size=25 value=""></td>
-						</tr>
-						<tr>
-							<td>campos: </td>
-							<td>
-								<!--<input id="campos" name='campos' type="textarea" rows="10" cols="40" value=
-								campo1 = "valor1", campo2 = valor2>-->
-								<input id="campos" name='campos' type="text" size=25 value="nombre varchar(20)">
-							</td>
-						</tr>
-						<tr>
-							<td colspan=2><input type="submit" value="crear"></td>
-						</tr>
-						</table></center>
+						<center>
+						<div id="t_crear_d"></div>
+						</center>
 					</form>	
 				</div>
 				<a href="#Inicio" data-role="button" data-inline="false" data-rel="dialog" data-theme="b" data-transition="slidedown"><b>volver</b></a>

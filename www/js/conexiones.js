@@ -222,7 +222,7 @@ function mostrar_tablas_on(){
 function mostrar_datos_on(){
     console.log("mostrar datos funcion conexiones");
     $("#lista_datos").html('...');
-    
+    $("#t_crear_d").html('...');
     var formData = new Array();
     
     formData.push(usuario); //datos del usuario
@@ -253,18 +253,27 @@ function mostrar_datos_on(){
             //["ID_Contact", "Name", "Email", "Phone"]
             var datos_zzz = data.datos;
             var lista_zzz = document.getElementById('lista_datos').innerHTML; // tabla 6x4
+            var tabla_crear= document.getElementById('t_crear_d').innerHTML;
             var n_dato=0;
             for (var i=0;i<(datos_zzz.length/columnas_zzz.length);i++) { //24/4=6  6 vueltas 6 filas
                  if (i==0){ //primera fila nombres de las columnas
                     lista_zzz ="<table border=1><tr><td/>";
+                    tabla_crear="<table border=1><tr>";
                     for(var n=0;n<columnas_zzz.length;n++) { //4 vueltas 4 celdas
                         lista_zzz +="<td>"+columnas_zzz[n]+"</td>";
+                        tabla_crear += "<td>"+columnas_zzz[n]+"</td>";
                     }
+                    tabla_crear+="<tr>";
+                    for(var o=0;o<columnas_zzz.length;o++) { //4 vueltas 4 celdas
+                        tabla_crear += "<td><input id=\"valor"+o+"\" name=\"valores\" type=\"text\" size=25 value=\"valor\"/></td>";
+                    }
+                    tabla_crear+="</tr>";
                     //"<input type='Radio' name='tabla_seleccionada' value=\'"+tablas_zzz[i]+"\'>"+tablas_zzz[i]; 
                     lista_zzz+="</tr>";
                  }else{
                     lista_zzz+="<tr>";//boton sin terminar
                     //lista_zzz+="<td><input type='Radio' name='tabla_seleccionada' value=\'"+datos_zzz[n_dato]+"\'>"+i+"</td>"; //correciones pendientes
+                    lista_zzz+="<td>"+i+"</td>";
                     for(var m=0;m<columnas_zzz.length;m++)// 4 vueltas 4 celdas
                     {
                         lista_zzz +="<td>"+datos_zzz[n_dato]+"</td>";
@@ -277,6 +286,9 @@ function mostrar_datos_on(){
             lista_zzz+="</table>";
             lista_zzz+="</br>";
             $("#lista_datos").html(lista_zzz);
+            tabla_crear+="</table>";
+            tabla_crear+="</br>";
+            $("#t_crear_d").html(tabla_crear);
         },
         error: function(XMLHttpRequest, textStatus, errorThrown) {
             alert("Status: " + textStatus); alert("Error: " + errorThrown);
@@ -284,4 +296,11 @@ function mostrar_datos_on(){
             //$( "#contentDiv" ).html(XMLHttpRequest.responseText);
         }
     });
+}
+
+//configuracion de crear datos
+// lista datos 
+function crear_datos_on(){
+    console.log("crear datos funcion conexiones");
+    mostrar_datos_on();
 }
