@@ -3,6 +3,7 @@
 
 var usuario="";
 var contrasena="";
+var contador_espezial=0;
 
 $(document).ready(function(){
 
@@ -32,6 +33,7 @@ $(document).ready(function(){
                 $( "#xervidor" ).html(data.servidor);
                 $( "#rexultado1" ).html("online");
                 alert("conexion exitosa: "+data.usuario);
+                //conexion_online(); carga de funcion de otro script
                 //location.href = "index.html";
               
            },
@@ -113,8 +115,16 @@ $(document).ready(function(){
         var bd_seleccionada = $("#bd_seleccionada2").html();
         var n_bd = {name:"n_bd",value:bd_seleccionada}
         formData.push(n_bd);
-        var gestion = {name:"gestion_tabla",value:"crear"};
+        
+        var tabla_seleccionada = $("#tabla_seleccionada2").html(); //nombre tabla
+        var n_tabla = {name:"n_tabla",value:tabla_seleccionada};
+        formData.push(n_tabla);
+    
+        var gestion = {name:"gestion_dato",value:"crear"};
         formData.push(gestion);
+
+        var n_valores = {name:"n_valores",value:contador_espezial};
+        formData.push(n_valores);
         
         $.ajax({
             type: "POST",
@@ -123,7 +133,7 @@ $(document).ready(function(){
             data: formData,
             success: function(data){
                 console.log(data);
-                alert(data.resultado+": "+data.nombre_tabla)
+                alert(data.resultado)
             },
             error: function(XMLHttpRequest, textStatus, errorThrown) {
                 //alert("Status: " + textStatus); alert("Error: " + errorThrown);
@@ -255,7 +265,11 @@ function mostrar_datos_on(){
             var lista_zzz = document.getElementById('lista_datos').innerHTML; // tabla 6x4
             var tabla_crear= document.getElementById('t_crear_d').innerHTML;
             var n_dato=0;
-            for (var i=0;i<(datos_zzz.length/columnas_zzz.length);i++) { //24/4=6  6 vueltas 6 filas
+            var n_bucle=datos_zzz.length/columnas_zzz.length;
+            if(datos_zzz.length<columnas_zzz.length){
+                n_bucle=1;
+            }
+            for (var i=0;i<n_bucle+1;i++) { //24/4=6  6 vueltas 6 filas
                  if (i==0){ //primera fila nombres de las columnas
                     lista_zzz ="<table border=1><tr><td/>";
                     tabla_crear="<table border=1><tr>";
@@ -264,8 +278,10 @@ function mostrar_datos_on(){
                         tabla_crear += "<td>"+columnas_zzz[n]+"</td>";
                     }
                     tabla_crear+="<tr>";
+                    contador_espezial=0;
                     for(var o=0;o<columnas_zzz.length;o++) { //4 vueltas 4 celdas
-                        tabla_crear += "<td><input id=\"valor"+o+"\" name=\"valores\" type=\"text\" size=25 value=\"valor\"/></td>";
+                        tabla_crear += "<td><input name=\"valor"+o+"\" type=\"text\" size=25 value=\"valor\"/></td>";
+                        contador_espezial=o;
                     }
                     tabla_crear+="</tr>";
                     //"<input type='Radio' name='tabla_seleccionada' value=\'"+tablas_zzz[i]+"\'>"+tablas_zzz[i]; 
